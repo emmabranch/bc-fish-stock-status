@@ -73,7 +73,7 @@ docs/              rendered website (served by GitHub Pages)
 
 ## About
 
-Built by Emma Branch, an epidemiologist and data analyst who is new to fisheries science, as a way to learn the field's core concepts through its public data. I used an AI assistant to help write and debug code; I reviewed the outputs and the data checks. Corrections are welcome through GitHub issues.
+Built by Emma Branch, an epidemiologist and data analyst who is new to fisheries science, as a way to learn the field's core concepts through its public data. Corrections are welcome through GitHub issues.
 
 ## Citation for data
 
