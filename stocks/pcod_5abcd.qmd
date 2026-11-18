@@ -1,0 +1,7 @@
+---
+title: "Pacific cod, Queen Charlotte Sound and Hecate Strait"
+params:
+  stock_id: "pcod_5abcd"
+---
+
+{{< include ../_stock_page.qmd >}}

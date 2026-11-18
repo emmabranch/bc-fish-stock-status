@@ -1,0 +1,7 @@
+---
+title: "Pacific herring, Prince Rupert District"
+params:
+  stock_id: "herring_prd"
+---
+
+{{< include ../_stock_page.qmd >}}

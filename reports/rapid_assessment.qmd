@@ -1,0 +1,172 @@
+---
+title: "Rapid stock status summary"
+subtitle: "Exploratory personal project. Not an official assessment."
+format:
+  typst:
+    papersize: us-letter
+    margin:
+      x: 0.75in
+      y: 0.6in
+    fontsize: 10pt
+    fig-format: png
+    fig-dpi: 300
+  html:
+    embed-resources: true
+    toc: false
+params:
+  stock_id: "herring_hg"
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+source(here::here("R", "functions.R"))
+source(here::here("R", "plot_functions.R"))
+source(here::here("R", "card_functions.R"))
+
+db_dir     <- here::here("data", "processed")
+stocks     <- readr::read_csv(file.path(db_dir, "stocks.csv"), show_col_types = FALSE)
+timeseries <- readr::read_csv(file.path(db_dir, "timeseries.csv"), show_col_types = FALSE)
+
+s <- make_card_data(stocks, timeseries) |> filter(stock_id == params$stock_id)
+if (nrow(s) != 1) stop("Unknown stock_id: ", params$stock_id)
+
+# Escape characters that Markdown would otherwise treat as formatting
+md_escape <- function(x) str_replace_all(x, "([*_#|])", "\\\\\\1")
+
+b <- timeseries |> filter(stock_id == params$stock_id, metric == "b_lrp") |> arrange(year)
+
+zone_sentence <- if (is.na(s$dfo_status_zone)) {
+  "This stock was not included in DFO's 2024 Sustainability Survey for Fisheries, so there is no official status zone to report."
+} else {
+  glue("DFO's 2024 Sustainability Survey for Fisheries places this stock in the **{s$dfo_status_zone}** zone (method recorded: {str_to_lower(s$status_method)}).")
+}
+
+latest_sentence <- if (!is.na(s$latest_b_lrp)) {
+  glue("In {s$latest_year}, the last year of the assessment series in RAM Legacy, estimated biomass was {number(s$latest_b_lrp, accuracy = 0.01)} times the limit reference point used in this project, which is {if (s$latest_b_lrp >= 1) 'above' else 'below'} the limit.")
+} else {
+  "No biomass time series was compiled for this stock, so there is no indicator value to report."
+}
+
+history_sentence <- if (nrow(b) > 0) {
+  low <- b |> slice_min(value, n = 1)
+  glue("Between {min(b$year)} and {max(b$year)}, biomass was below the limit in {sum(b$value < 1)} of {nrow(b)} years. The lowest value was {number(low$value, accuracy = 0.01)} times the limit, in {low$year}.")
+} else {
+  ""
+}
+
+uncertainty_text <- switch(
+  s$data_tier,
+  A = "Status is based on model estimates of biomass and fishing pressure relative to MSY. These estimates carry statistical uncertainty that is not shown here; the published assessment reports it.",
+  B = "Biomass relative to MSY is available, but fishing pressure relative to MSY is not, so only half of the usual status picture can be shown. Model uncertainty is not shown here.",
+  C = "There are no MSY-based ratios for this stock in RAM Legacy. Status is judged against a limit based on unfished spawning biomass, which DFO re-estimates each year. Model uncertainty is not shown here.",
+  D = glue("No assessment time series was compiled in this project. Status relies entirely on DFO's survey response, recorded as based on: {str_to_lower(coalesce(s$status_method, 'not reported'))}.")
+)
+```
+
+*Emma Branch. Generated `r format(Sys.Date(), "%d %B %Y")` from open data.*
+
+::: callout-note
+This summary was generated automatically by an exploratory personal project. It does not reproduce DFO's methods or any seafood recommendation program, and it makes no recommendations.
+:::
+
+## `r s$stock_name`
+
+`r zone_sentence` `r latest_sentence` `r history_sentence`
+
+```{r}
+#| label: glance
+#| results: asis
+glance <- tribble(
+  ~Item, ~Detail,
+  "Species",                       s$species,
+  "DFO 2024 status zone",          coalesce(s$dfo_status_zone, "Not in 2024 survey"),
+  "Data tier",                     paste0(s$data_tier, ": ", s$data_tier_label),
+  "Latest biomass / limit",        if (!is.na(s$latest_b_lrp)) paste0(number(s$latest_b_lrp, accuracy = 0.01), "\u00d7 (", s$latest_year, ")") else "Not available",
+  "Assessment years",              coalesce(s$ram_assess_years, "Not in RAM Legacy"),
+  "Managed by",                    s$manager,
+  "Management plan",               coalesce(s$ifmp, "Not reported")
+) |>
+  mutate(Detail = md_escape(Detail))
+
+# Dash counts set the column widths: about 25% / 75%
+cat("\n| Item | Detail |\n")
+cat("|:--------------------|:------------------------------------------------------------|\n")
+cat(paste0("| ", glance$Item, " | ", glance$Detail, " |"), sep = "\n")
+cat("\n")
+```
+
+```{r}
+#| label: trend
+#| fig-width: 7.5
+#| fig-height: 3.3
+if (s$data_tier != "D") {
+  plot_trend(timeseries, stocks, params$stock_id) &
+    theme_bcstock(base_size = 10)
+}
+```
+
+```{r}
+#| label: no-trend
+#| results: asis
+if (s$data_tier == "D") {
+  cat("\n**Status and trends:** no assessment time series was compiled for this stock. See the data gaps section below.\n")
+}
+```
+
+```{r}
+#| label: kobe
+#| eval: !expr s$data_tier == "A"
+#| fig-width: 7
+#| fig-height: 3.0
+plot_kobe(filter(timeseries, stock_id == params$stock_id), stocks) +
+  labs(
+    title    = "Kobe plot",
+    subtitle = "Biomass and fishing pressure relative to MSY levels. The arrow points to the latest year.",
+    x        = "B/Bmsy",
+    y        = "F/Fmsy (or U/Umsy)",
+    caption  = caption_std
+  ) +
+  theme_bcstock(base_size = 9) +
+  theme(legend.position = "none")
+```
+
+## Management context
+
+```{r}
+#| label: management
+#| results: asis
+mgmt <- c(
+  glue("**Limit reference point, as described by DFO:** {md_escape(coalesce(s$lrp_description, 'Not reported'))}"),
+  glue("**Upper stock reference, as described by DFO:** {md_escape(coalesce(s$usr_description, 'Not reported'))}"),
+  glue("**Limit used for this project's indicator:** {md_escape(coalesce(s$lrp_basis, 'None (no time series compiled)'))}"),
+  glue("**Management plan:** {md_escape(coalesce(s$ifmp, 'Not reported'))}"),
+  glue("**Managed by:** {md_escape(s$manager)}")
+)
+cat("\n")
+cat(paste0("- ", mgmt), sep = "\n")
+
+links <- str_extract_all(coalesce(s$science_report_links, ""), "https?://\\S+")[[1]]
+if (length(links) > 0) {
+  cat("\n\n**Science documents cited by DFO in the 2024 survey:** ")
+  cat(paste0("<", links, ">"), sep = "; ")
+  cat("\n")
+}
+```
+
+## Data gaps and uncertainty
+
+```{r}
+#| label: gaps
+#| results: asis
+cat("\n")
+cat(paste0("- ", md_escape(make_gaps(s))), sep = "\n")
+cat("\n\n", uncertainty_text, "\n")
+```
+
+## Sources
+
+Fisheries and Oceans Canada, Sustainability Survey for Fisheries, 2024 results (Open Government Licence, Canada). RAM Legacy Stock Assessment Database v4.66, assessment-only (Zenodo, 2024); Ricard, D., Minto, C., Jensen, O.P. and Baum, J.K. (2012), *Fish and Fisheries* 13(4): 380 to 398. Code and data dictionary: github.com/emmabranch/bc-fish-stock-status.

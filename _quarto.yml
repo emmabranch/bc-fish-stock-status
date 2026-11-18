@@ -1,0 +1,52 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - cards.qmd
+    - explore.qmd
+    - methods.qmd
+    - about.qmd
+    - story.qmd
+    - stocks/*.qmd
+  resources:
+    - reports/output/*.pdf
+    - data/processed/*.csv
+    - figures/*.png
+
+website:
+  title: "BC fish stock status"
+  favicon: favicon.svg
+  site-url: https://emmabranch.github.io/bc-fish-stock-status/
+  repo-url: https://github.com/emmabranch/bc-fish-stock-status
+  navbar:
+    left:
+      - href: index.qmd
+        text: Map
+      - href: cards.qmd
+        text: Stock cards
+      - href: explore.qmd
+        text: Explore
+      - href: story.qmd
+        text: Story
+      - href: methods.qmd
+        text: Methods and data
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/emmabranch/bc-fish-stock-status
+  page-footer:
+    center: "Exploratory personal project by Emma Branch. Not an official assessment and not a seafood recommendation."
+
+format:
+  html:
+    theme: [flatly, theme.scss]
+    css: cards.css
+    toc: false
+
+execute:
+  echo: false
+  warning: false
+  message: false
+  freeze: auto

@@ -1,0 +1,7 @@
+---
+title: "Pacific herring, Haida Gwaii"
+params:
+  stock_id: "herring_hg"
+---
+
+{{< include ../_stock_page.qmd >}}

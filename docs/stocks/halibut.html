@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Pacific halibut, coastwide (Canada and US) – BC fish stock status</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-45bc3c22a30054ba915faa366cf210ab.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../cards.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">BC fish stock status</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Map</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../cards.html"> 
+<span class="menu-text">Stock cards</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../explore.html"> 
+<span class="menu-text">Explore</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../story.html"> 
+<span class="menu-text">Story</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../methods.html"> 
+<span class="menu-text">Methods and data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/emmabranch/bc-fish-stock-status"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+            <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Pacific halibut, coastwide (Canada and US)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="disclaimer">
+<p>Exploratory personal project. Not an official assessment and not a seafood recommendation.</p>
+</div>
+<div class="columns">
+<div class="column" style="width:36%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="stock-card">
+<div class="card-head" style="background:#16a085;">
+<div class="card-species">Pacific halibut</div>
+<div class="card-title">Pacific halibut, coastwide (Canada and US)</div>
+</div>
+<div class="card-body">
+<div class="badges">
+<span class="badge" style="background:#1a7f4b;">DFO 2024: Healthy</span>
+<span class="badge tier">Data tier A</span>
+</div>
+<div class="stat">1.88× LRP</div>
+<div class="stat-label">Biomass relative to the limit reference point, 2020</div>
+<img class="spark" src="data:image/png;base64,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FPmxg0cjnw0UY6X+NKndTnSuGh0fnzTv5cZumwFMREQEIHf1op8DuPoEhydTkWSfymv9Q43dXth1OomIiDoZ88gJDxV9qinhCzCAiYiIAADlk2f/HwRPHn+kltpUdHZTt8cAJiIiAgAR7WqT0yH6eAOjig3sZRXTZ+1v8uaaugAREVFHk1+4aIJVTANwPoAugBQr9NlumlzZ2HNLExEREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREVHnIC+NPXt4WLFbMmPX6M2bk67aurFnDjKIdHHVMrT2w7Gv7jrkqv3ugrPzooJsV80G+tGE17aWumobLhjao04y+zsbtab2Cxvf2uPs85JLIqa24gznPAAXb3jnXQHUOXfciKFGJeqq1R4x+7781ls1rtrvx53XP6JBD2eryUR8wuYdFa7any46p5dNab6z0QCHv/DaO+87+7xkUKapPeV0V83YVDB+47s7nGsCWDfunDONqrhqNb1qd//T/+6qc9V+f+HwgRHrdXXVbGbkwIQX36hy1f44fmSOJpN9XDWJBlUX/2n7AWefl4w4xdTKqa6aiUjd+Jff3u2qFX39617e+9uHuWoAUHbq8B0Tf/7zwFX7/YVnD4lYxFw1m6nvT3hx62FX7Y/jh/fVpJflqkk0WnHxn7bEXbV1l3w2y9Sm+rpqKRMcufTP20tctecvH5rR7aPMwc4+RXTC+rffddUA4E9jzhxmTcRzzs08vGfCi3trXbWXPnf2qfBwiqtmIlI6/uW3P3LV1o0a1sdEYzmuWkq8Q5euf/NDV+03557bLbOrPc3Zp2hywvqtu1w1BeSPY88+01UDAJvZZ+eEF19MuWovjTn3dBib6ao19By37nMj8o0nvVy1pKLyslffKXPVGnqOs0gdnbDh3b2u2qZRo6I10bqhrhoAfGHDO9vDai9dMPwMiBdx1bolM0pGb958xFVbd8G5A4zY7q5a0qbKL9v47kFX7c/jRmQnVfJcNaumesKrb33gnjeuS1KrB7lqx3uOayjj+lRr8YitWxOuWkMZl0hm7P/S5s0fu2qvXHhubsra3q7a32dcREW3hTVXY+pOA+B80hfxnlToOFetDpnfAPDfrponuF1Fv+dc09MHANzqXFMyL1PR/3E26gWbAHzOWauJ99EIQm/j5lGjYgjZyRDgtyrqDLZoN70EwEuumpFgqUKvca4ZixQAWOKqBdZ+E4KfOBuN4FcA/tlZS3Q7U0W3ONf0vEoAzjsDAAjs6ypw3skyD3U9E8B7znbUrFTRS51rJhLTAKxy1TSZmKmCee6aeQTADc41a3W8Cp531YJAtwI421XrtXv3KRoLv4+ftm9LTwDOJ1JP9ZcqOMs5sQ6XA3jBVbKBuRui17tqmkosAHCHqyaJxFdV5DFXLaLm9wAuc9UyD3UdpBI4b6NAjwJw7igBQOB56wF17hAj0W0kgDdcJY3oQwC+4lzT6k0AHnL2E4v8u0IXu2pGgp8BuNZVi3bT0Qp90bkmsAeAcwdk86hREZXa0N8/auJ9ATh3+tULigCMdtXqkHkVgKed/Xg6RwUzXTUPch+A25xrSublKvqUc0146wFc6KrVmLr8hp7HATh3sAFAjfkDoAOc68bqPg/gz84FTeo+hUx01TwvcjuAH7pqSch1Kvoj55oSPAPga65aQg6dDWCjqxZ4XhkA94ELABV9C4BzJ6OylxkCwLnzLuKtUeh4Vy0WPXotgJ85e7XBd0Uwy7mmh4cA3PTJf0eg4nyiBIBoRJ1HeAAgKr9WwLlnLaLOo1EAMMBrGrJNEbwaNi9QKTEhT+oQ3Rs2L2Uzj0a1LvQ2Vnfv7jz6PWYtVJxHa/DE+aAFAAP9o6o496qskbfC5gnwbgP/Nm+GzYsaVKZSYfPCf4cAoJA1ou6jvIhJOoPp2LzfQLHPWbPYGTpP5HVoSDhDnQ92ADBqPrQhv3+BOo+aAKAXkDzcwH3cmpwk4Dx4ggqeESvO+6QRCd2mWrwiEOdRJQTOHSUA0EB2irh7VUHoUUzEJA/ZwAub57wf/rUdPKkq3Vy1qKeV4fPkd6pwHsmLaOgRtxXzlrHu36MR3RDaqJFSBCG/R1HnK0pA/eNbasMf/ymbcTR0m8BzUHnbVQhUnK9GAICIvBr2ODbAa+HzdE/o4x8oDpsXjWhNooH7eIMERbDuo3UrWh46T82LANzPLaLvhE6z2IbQ+7i+HtpmyqtQY8PmhT5P1U/Galj341ElUh3aK/C8qLhfWTHGGdoAAINNsCG30WB9g70SERERERERERERERERERERERERERERtWn/D3AGW9U7u2cfAAAAAElFTkSuQmCC" alt="Sparkline of biomass relative to the limit reference point for Pacific halibut, coastwide (Canada and US)">
+<dl>
+<dt>Evidence</dt>
+<dd>Biomass and fishing pressure relative to MSY</dd>
+<dt>Managed by</dt>
+<dd>DFO, co-managed with United States of America via the International Pacific Halibut Commission</dd>
+<dt>Status method</dt>
+<dd>Scientific Peer Review Process</dd>
+<dt>Assessment years</dt>
+<dd>1992-2020</dd>
+</dl>
+<div class="gaps">
+<strong>Data gaps and caveats</strong>
+<ul>
+<li>Time series ends in 2020; the DFO zone is from the 2024 survey.</li>
+<li>Fishing-pressure ratio available only to 2013.</li>
+<li>Limit reference point taken or derived from RAM Legacy; DFO's current value may differ.</li>
+</ul>
+</div>
+<div class="fun">Fun fact: The largest flatfish in the North Pacific. As it grows, both eyes end up on one side of its head.</div>
+<div class="note">Coastwide stock; pin position is illustrative.</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:4%;">
+
+</div><div class="column" style="width:60%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="halibut_files/figure-html/trend-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="../reports/output/rapid_assessment_halibut.pdf" class="btn btn-primary">Download the 2-page rapid assessment (PDF)</a></p>
+</div>
+</div>
+<section id="kobe-plot" class="level2">
+<h2 class="anchored" data-anchor-id="kobe-plot">Kobe plot</h2>
+<p><img src="halibut_files/figure-html/kobe-1.png" class="img-fluid" style="width:75.0%"></p>
+</section>
+<section id="management-context" class="level2">
+<h2 class="anchored" data-anchor-id="management-context">Management context</h2>
+<ul>
+<li><strong>Limit reference point, as described by DFO:</strong> LRP set at 0.2 of the equilibrium un-fished female spawning biomass (SB20). At the end of 2023, SB was estimated to be 174,000,000 net lbs. From this, SB20 = 34,800,000 net lbs.</li>
+<li><strong>Upper stock reference, as described by DFO:</strong> USR set at 0.3 of the equilibrium un-fished female spawning biomass (SB30). At the end of 2023, SB was estimated to be 174,000,000 net lbs. From this, SB30 = 52,200,000 net lbs.</li>
+<li><strong>Limit used for this project’s indicator:</strong> SSBlim from RAM (IPHC limit; the 2024 survey describes the LRP as 0.2 x unfished female spawning biomass)</li>
+<li><strong>Management plan:</strong> Pacific Integrated Fisheries Management Plan - GROUNDFISH - Effective Feb 21, 2024 - Feb 20, 2025 (Current Pacific Integrated Fisheries Management plan - GROUNDFISH - Effective Feb 21, 2025 - Feb 20, 2026)</li>
+<li><strong>Managed by:</strong> DFO, co-managed with United States of America via the International Pacific Halibut Commission</li>
+</ul>
+<p><strong>Science documents cited by DFO in the 2024 survey:</strong></p>
+<ul>
+<li><a href="https://www.iphc.int/uploads/2023/12/IPHC-2024-AM100-10-Data-overview-and-stock-assessment.pdf" class="uri">https://www.iphc.int/uploads/2023/12/IPHC-2024-AM100-10-Data-overview-and-stock-assessment.pdf</a></li>
+<li><a href="https://www.iphc.int/uploads/2023/12/IPHC-2024-AM100-12-Projections-and-harvest-decision-table.pdf" class="uri">https://www.iphc.int/uploads/2023/12/IPHC-2024-AM100-12-Projections-and-harvest-decision-table.pdf</a></li>
+</ul>
+</section>
+<section id="data-gaps-and-caveats" class="level2">
+<h2 class="anchored" data-anchor-id="data-gaps-and-caveats">Data gaps and caveats</h2>
+<ul>
+<li>Time series ends in 2020; the DFO zone is from the 2024 survey.</li>
+<li>Fishing-pressure ratio available only to 2013.</li>
+<li>Limit reference point taken or derived from RAM Legacy; DFO’s current value may differ.</li>
+</ul>
+<p><a href="../cards.html">← Back to all stock cards</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/emmabranch\.github\.io\/bc-fish-stock-status\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Exploratory personal project by Emma Branch. Not an official assessment and not a seafood recommendation.</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -1,0 +1,7 @@
+---
+title: "Pacific herring, Central Coast"
+params:
+  stock_id: "herring_cc"
+---
+
+{{< include ../_stock_page.qmd >}}

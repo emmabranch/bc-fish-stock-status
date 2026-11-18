@@ -1,0 +1,37 @@
+table,field,type,description,source
+stocks,stock_id,text,Short project identifier for the stock,Project
+stocks,species,text,Common name of the species,Project
+stocks,stock_name,text,Plain-language name of the stock and area,Project
+stocks,ssf_stock,text,Stock name as written in the DFO Sustainability Survey for Fisheries,DFO SSF 2024
+stocks,ram_stockid,text,Stock identifier in the RAM Legacy database,RAM Legacy v4.66
+stocks,data_tier,text,Evidence tier used in this project (A to D),Project
+stocks,data_tier_label,text,Plain-language description of the data tier,Project
+stocks,dfo_status_zone,text,"DFO Precautionary Approach zone: Healthy, Cautious, Critical, or Uncertain",DFO SSF 2024
+stocks,status_method,text,How DFO determined the status zone,DFO SSF 2024
+stocks,usr_description,text,DFO description of the Upper Stock Reference point,DFO SSF 2024
+stocks,lrp_description,text,DFO description of the Limit Reference Point,DFO SSF 2024
+stocks,co_managed,text,Whether the stock is co-managed with another jurisdiction,DFO SSF 2024
+stocks,co_manager,text,"Name of the co-managing jurisdiction, if any",DFO SSF 2024
+stocks,ifmp,text,Integrated Fisheries Management Plan in effect at the time of the survey,DFO SSF 2024
+stocks,science_report_links,text,Links to the scientific reports DFO cited,DFO SSF 2024
+stocks,ram_assessid,text,RAM Legacy assessment identifier,RAM Legacy v4.66
+stocks,ram_assess_years,text,Year range covered by the assessment in RAM Legacy,RAM Legacy v4.66
+stocks,management_authority,text,Management authority recorded in RAM Legacy,RAM Legacy v4.66
+stocks,ram_last_year,integer,Last year covered by the RAM Legacy assessment,Derived
+stocks,ssf_survey_year,integer,Survey year for the DFO status zone. Surveys generally report on the previous year's data,Derived
+timeseries,stock_id,text,Project stock identifier (joins to stocks),Project
+timeseries,ram_stockid,text,RAM Legacy stock identifier,RAM Legacy v4.66
+timeseries,year,integer,Year,RAM Legacy v4.66
+timeseries,metric,text,"b_bmsy: biomass / biomass at MSY; u_umsy: fishing pressure / fishing pressure at MSY (F or exploitation rate); ssb: spawning stock biomass; tb: total biomass; total_catch: total catch; landings: total landings; exploitation_rate: fraction of the stock caught; f: instantaneous fishing mortality; b_lrp: biomass divided by the limit reference point (derived, approximate)",RAM Legacy v4.66
+timeseries,value,numeric,Value of the metric,RAM Legacy v4.66
+timeseries,unit,text,Unit of the metric as recorded in RAM Legacy,RAM Legacy v4.66
+timeseries,source,text,Data source and version,Project
+landings,species,text,Project species name (joins to stocks$species),Project
+landings,dfo_species,text,Species label used in the DFO landings file,DFO landings
+landings,year,integer,Calendar year,DFO landings
+landings,landings_t,numeric,"Commercial landings in BC, in tonnes (live weight). Species level, not stock level",DFO landings
+landings,value_cad,numeric,"Landed value in Canadian dollars, not adjusted for inflation",DFO landings
+landings,source,text,Data source,Project
+stocks,lrp_basis,text,"How the limit reference point used for b_lrp was defined, and where it came from",Project
+stocks,lrp_value,numeric,Value of the limit reference point used for b_lrp,RAM Legacy v4.66 / derived
+stocks,lrp_unit,text,Unit of lrp_value (MT = metric tonnes),Project

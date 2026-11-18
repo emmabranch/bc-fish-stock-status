@@ -1,0 +1,141 @@
+---
+title: "Methods and data"
+---
+
+```{r}
+#| label: setup
+source(here::here("R", "functions.R"))
+source(here::here("R", "plot_functions.R"))
+
+db_dir     <- here::here("data", "processed")
+stocks     <- readr::read_csv(file.path(db_dir, "stocks.csv"), show_col_types = FALSE)
+timeseries <- readr::read_csv(file.path(db_dir, "timeseries.csv"), show_col_types = FALSE)
+dd         <- readr::read_csv(file.path(db_dir, "data_dictionary.csv"), show_col_types = FALSE)
+```
+
+## Summary
+
+This project combines two open sources into a small, documented database for ten British Columbia stocks. It applies simple written rules to describe each stock's status, its history, and the gaps in the evidence. It is a learning project by an epidemiologist who is new to fisheries science. It does not replicate DFO's methods or those of any seafood recommendation program, and it makes no recommendations.
+
+## Data sources
+
+| Source | What it provides | Version | Licence |
+|:--|:--|:--|:--|
+| DFO Sustainability Survey for Fisheries | Official status zone (Healthy, Cautious, Critical, Uncertain), reference point descriptions, management plans | 2024 results | Open Government Licence, Canada |
+| RAM Legacy Stock Assessment Database | Assessment time series (biomass, catch, ratios to MSY) and reference points | v4.66, assessment-only | CC BY 4.0 |
+| DFO Commercial Seafisheries Landings | Landings by species group, used only as background | 1990 to 2024 | Open Government Licence, Canada |
+
+## Data tiers
+
+Stocks differ in how much public evidence exists. Each stock is assigned a tier, and the tier decides which plots and caveats it gets.
+
+| Tier | Meaning | Stocks |
+|:--|:--|:--|
+| A | Biomass and fishing pressure relative to MSY | Sablefish, Pacific halibut |
+| B | Biomass relative to MSY only | Pacific cod (5ABCD) |
+| C | Biomass and catch trends, no MSY ratios | Five Pacific herring areas |
+| D | DFO status zone only, no assessment time series compiled | Spot prawn, Dungeness crab |
+
+## A common indicator
+
+Stocks use different reference points, so they cannot be compared directly. For every stock with a time series, this project divides biomass by that stock's **limit reference point (LRP)**, the level below which DFO considers serious harm to be occurring. A value below 1 means below the limit. The limits are taken or derived from RAM Legacy and are approximate.
+
+```{r}
+#| label: lrp-table
+stocks |>
+  filter(!is.na(lrp_basis)) |>
+  transmute(
+    Stock       = unname(stock_short[stock_id]),
+    `Limit used` = lrp_basis,
+    Value       = if_else(lrp_unit == "MT", paste(comma(round(lrp_value)), "t"),
+                          paste0(lrp_value, " \u00d7 Bmsy"))
+  ) |>
+  knitr::kable()
+```
+
+## Cross-checks
+
+**Herring limits, RAM versus DFO.** The LRP implied by RAM's 2018 values is compared with the value DFO reported in the 2024 survey, extracted automatically from the survey text.
+
+```{r}
+#| label: herring-check
+stocks |>
+  filter(species == "Pacific herring") |>
+  mutate(dfo_txt = str_extract(lrp_description, "[0-9]{1,3}(,[0-9]{3})+(?= tonnes)"),
+         dfo_num = parse_number(dfo_txt)) |>
+  transmute(
+    Stock                     = unname(stock_short[stock_id]),
+    `RAM: 0.3 x SSB0 (t)`     = comma(round(lrp_value)),
+    `DFO 2024 survey (t)`     = dfo_txt,
+    Difference                = percent((lrp_value - dfo_num) / dfo_num, accuracy = 0.1)
+  ) |>
+  knitr::kable()
+```
+
+**Sablefish.** RAM's spawning biomass at MSY (22,820 t) is within 0.5% of the Bmsy reported in DFO's 2024 survey (22,720 t).
+
+**Latest indicator versus DFO's 2024 zone.** A stock below its limit should be in the Critical zone; a stock above it should be Cautious or Healthy.
+
+```{r}
+#| label: agreement
+timeseries |>
+  filter(metric == "b_lrp") |>
+  group_by(stock_id) |>
+  slice_max(year, n = 1) |>
+  ungroup() |>
+  left_join(select(stocks, stock_id, dfo_status_zone), by = "stock_id") |>
+  transmute(
+    Stock            = unname(stock_short[stock_id]),
+    `Latest year`    = year,
+    `Biomass / LRP`  = number(value, accuracy = 0.01),
+    `DFO 2024 zone`  = coalesce(dfo_status_zone, "Not in survey"),
+    Consistent       = case_when(
+      is.na(dfo_status_zone) ~ "No zone to compare",
+      (value < 1) == (dfo_status_zone == "Critical") ~ "Yes",
+      TRUE ~ "No"
+    )
+  ) |>
+  knitr::kable()
+```
+
+## Data dictionary
+
+```{r}
+#| label: dictionary
+DT::datatable(dd, rownames = FALSE,
+              options = list(pageLength = 10, dom = "ftip", autoWidth = TRUE))
+```
+
+## Downloads
+
+- [stocks.csv](data/processed/stocks.csv): one row per stock
+- [timeseries.csv](data/processed/timeseries.csv): long-format time series, one row per stock, year, and metric
+- [landings.csv](data/processed/landings.csv): BC commercial landings by species group
+- [data_dictionary.csv](data/processed/data_dictionary.csv): every field in every table
+
+## How it is built
+
+All steps are R scripts in the [GitHub repository](https://github.com/emmabranch/bc-fish-stock-status), run in order:
+
+1. `01_download.R`: downloads the raw files.
+2. `04_build_database.R`: builds the tidy tables and data dictionary.
+3. `06_harmonise_lrp.R`: adds the biomass-to-limit indicator and runs the cross-checks.
+4. `07_make_figures.R` and `08_map_cards.R`: figures, map, and cards.
+5. `09_render_reports.R`: renders one parameterised 2-page PDF per stock.
+6. `10_make_site_files.R`, then `quarto render`: builds this website.
+
+## Limitations
+
+- RAM Legacy copies published assessments, so the time series end between 2018 and 2021 and may not match DFO's latest advice.
+- Limit reference points used for the common indicator are approximate, and some are derived rather than official.
+- Point estimates only. Assessment uncertainty is not shown.
+- Map pins mark general areas, not stock boundaries.
+- National landings data group several BC species together, so they are not used for stock-level conclusions.
+- Spot prawn and Dungeness crab have no compiled time series; their status here relies entirely on DFO's survey response.
+
+## References
+
+- Fisheries and Oceans Canada (2025). Sustainability Survey for Fisheries, 2024 results. Open Government Portal.
+- RAM Legacy Stock Assessment Database (2024). Version 4.66. Zenodo.
+- Ricard, D., Minto, C., Jensen, O.P. and Baum, J.K. (2012). Evaluating the knowledge base and status of commercially exploited marine species with the RAM Legacy Stock Assessment Database. *Fish and Fisheries* 13(4): 380 to 398.
+- Fisheries and Oceans Canada (2009). A fishery decision-making framework incorporating the precautionary approach.

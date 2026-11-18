@@ -1,0 +1,7 @@
+---
+title: "Pacific halibut, coastwide (Canada and US)"
+params:
+  stock_id: "halibut"
+---
+
+{{< include ../_stock_page.qmd >}}

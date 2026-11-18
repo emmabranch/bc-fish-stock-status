@@ -1,0 +1,97 @@
+```{r}
+#| label: setup
+source(here::here("R", "functions.R"))
+source(here::here("R", "plot_functions.R"))
+source(here::here("R", "card_functions.R"))
+
+db_dir     <- here::here("data", "processed")
+stocks     <- readr::read_csv(file.path(db_dir, "stocks.csv"), show_col_types = FALSE)
+timeseries <- readr::read_csv(file.path(db_dir, "timeseries.csv"), show_col_types = FALSE)
+
+s <- make_card_data(stocks, timeseries) |> filter(stock_id == params$stock_id)
+md_escape <- function(x) str_replace_all(x, "([*_#|])", "\\\\\\1")
+```
+
+::: {.disclaimer}
+Exploratory personal project. Not an official assessment and not a seafood recommendation.
+:::
+
+::::: {.columns}
+
+:::: {.column width="36%"}
+```{r}
+#| label: card
+make_card(s)
+```
+::::
+
+:::: {.column width="4%"}
+::::
+
+:::: {.column width="60%"}
+```{r}
+#| label: trend
+#| fig-width: 8
+#| fig-height: 5.4
+if (s$data_tier != "D") plot_trend(timeseries, stocks, params$stock_id) else plot_no_data(s)
+```
+
+```{r}
+#| label: download
+#| results: asis
+cat(glue("\n\n[Download the 2-page rapid assessment (PDF)](../reports/output/rapid_assessment_{params$stock_id}.pdf){{.btn .btn-primary}}\n\n"))
+```
+::::
+
+:::::
+
+```{r}
+#| label: kobe
+#| results: asis
+#| fig-width: 7
+#| fig-height: 5
+#| out-width: "75%"
+if (s$data_tier == "A") {
+  cat("\n## Kobe plot\n\n")
+  print(
+    plot_kobe(filter(timeseries, stock_id == params$stock_id), stocks) +
+      labs(title = NULL,
+           subtitle = "Biomass and fishing pressure relative to MSY levels. The arrow points to the latest year.",
+           caption = caption_std) +
+      theme(legend.position = "none")
+  )
+}
+```
+
+## Management context
+
+```{r}
+#| label: management
+#| results: asis
+mgmt <- c(
+  glue("**Limit reference point, as described by DFO:** {md_escape(coalesce(s$lrp_description, 'Not reported'))}"),
+  glue("**Upper stock reference, as described by DFO:** {md_escape(coalesce(s$usr_description, 'Not reported'))}"),
+  glue("**Limit used for this project's indicator:** {md_escape(coalesce(s$lrp_basis, 'None (no time series compiled)'))}"),
+  glue("**Management plan:** {md_escape(coalesce(s$ifmp, 'Not reported'))}"),
+  glue("**Managed by:** {md_escape(s$manager)}")
+)
+cat("\n")
+cat(paste0("- ", mgmt), sep = "\n")
+
+links <- str_extract_all(coalesce(s$science_report_links, ""), "https?://\\S+")[[1]]
+if (length(links) > 0) {
+  cat("\n\n**Science documents cited by DFO in the 2024 survey:**\n\n")
+  cat(paste0("- <", links, ">"), sep = "\n")
+}
+```
+
+## Data gaps and caveats
+
+```{r}
+#| label: gaps
+#| results: asis
+cat("\n")
+cat(paste0("- ", md_escape(make_gaps(s))), sep = "\n")
+```
+
+[← Back to all stock cards](../cards.qmd)

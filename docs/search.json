@@ -1,0 +1,401 @@
+[
+  {
+    "objectID": "stocks/spot_prawn.html",
+    "href": "stocks/spot_prawn.html",
+    "title": "Spot prawn, BC coast",
+    "section": "",
+    "text": "Exploratory personal project. Not an official assessment and not a seafood recommendation."
+  },
+  {
+    "objectID": "stocks/spot_prawn.html#management-context",
+    "href": "stocks/spot_prawn.html#management-context",
+    "title": "Spot prawn, BC coast",
+    "section": "Management context",
+    "text": "Management context\n\nLimit reference point, as described by DFO: The LRP is defined in spawner index units. Using the default formulas in DFO (2008) this would set the LRP at 1.56 spawner index units (40% Bmsy), where Bmsy = 3.9 SI units. https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/337043.pdf Explanatory note: The spawner index model is an index of abundance (catch per unit effort based on standardized trap gear). The unit of measure or spawner index is the number of spawners (mature females) per trap.\nUpper stock reference, as described by DFO: Using the default formulas in DFO (2008) this would set the USR at 3.12 spawner index units (80% Bmsy), where Bmsy =3.9 SI units. https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/337043.pdf Explanatory note: The spawner index model is an index of abundance (catch per unit effort based on standardized trap gear). The unit of measure or spawner index is the number of spawners (mature females) per trap.\nLimit used for this project’s indicator: None (no time series compiled)\nManagement plan: Pacific Region Integrated Fisheries Management Plan Prawn and Shrimp by Trap May 1, 2024 to April 30, 2025.\nManaged by: Fisheries and Oceans Canada (DFO)\n\nScience documents cited by DFO in the 2024 survey:\n\nhttps://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/337043.pdf\nhttps://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/2008/2008_049-eng.htm\nhttps://www.dfo-mpo.gc.ca/csas-sccs/Publications/ScR-RS/2012/2012_041-eng.html"
+  },
+  {
+    "objectID": "stocks/spot_prawn.html#data-gaps-and-caveats",
+    "href": "stocks/spot_prawn.html#data-gaps-and-caveats",
+    "title": "Spot prawn, BC coast",
+    "section": "Data gaps and caveats",
+    "text": "Data gaps and caveats\n\nNo public assessment time series compiled in this project; status relies on DFO’s survey response.\n\n← Back to all stock cards"
+  },
+  {
+    "objectID": "stocks/pcod_5abcd.html",
+    "href": "stocks/pcod_5abcd.html",
+    "title": "Pacific cod, Queen Charlotte Sound and Hecate Strait",
+    "section": "",
+    "text": "Exploratory personal project. Not an official assessment and not a seafood recommendation."
+  },
+  {
+    "objectID": "stocks/pcod_5abcd.html#management-context",
+    "href": "stocks/pcod_5abcd.html#management-context",
+    "title": "Pacific cod, Queen Charlotte Sound and Hecate Strait",
+    "section": "Management context",
+    "text": "Management context\n\nLimit reference point, as described by DFO: Not reported\nUpper stock reference, as described by DFO: Not reported\nLimit used for this project’s indicator: TBlim from RAM (limit reference point used in the assessment)\nManagement plan: Not reported\nManaged by: Fisheries and Oceans Canada (DFO)"
+  },
+  {
+    "objectID": "stocks/pcod_5abcd.html#data-gaps-and-caveats",
+    "href": "stocks/pcod_5abcd.html#data-gaps-and-caveats",
+    "title": "Pacific cod, Queen Charlotte Sound and Hecate Strait",
+    "section": "Data gaps and caveats",
+    "text": "Data gaps and caveats\n\nNot included in DFO’s 2024 Sustainability Survey, so there is no official status zone here.\nNo fishing-pressure ratio relative to MSY, so no Kobe plot.\nLimit reference point taken or derived from RAM Legacy; DFO’s current value may differ.\n\n← Back to all stock cards"
+  },
+  {
+    "objectID": "stocks/herring_sog.html",
+    "href": "stocks/herring_sog.html",
+    "title": "Pacific herring, Strait of Georgia",
+    "section": "",
+    "text": "Exploratory personal project. Not an official assessment and not a seafood recommendation."
+  },
+  {
+    "objectID": "stocks/herring_sog.html#management-context",
+    "href": "stocks/herring_sog.html#management-context",
+    "title": "Pacific herring, Strait of Georgia",
+    "section": "Management context",
+    "text": "Management context\n\nLimit reference point, as described by DFO: 0.3SBo (unfished spawning biomass) or 41,547 tonnes* (estimates are updated annually) *value reported from the 2023 stock assessment, implemented for 2023/24 fishery\nUpper stock reference, as described by DFO: Implementation of USRs occurred through the 2023/24 Pacific Herring IFMP. For the Strait of Georgia stock, the USR for was set at 80% of the average spawning biomass during the productive period (1988-2007). Provisional USRs are considered spawning biomass objectives in the MSE process and are not considered equivalent to the upper control point of the harvest control rule.\nLimit used for this project’s indicator: 0.3 x unfished spawning biomass (SSB0 from the 2018 assessment in RAM)\nManagement plan: 2023/24 Pacific Herring IFMP - November 7, 2023 - November 6, 2024\nManaged by: Fisheries and Oceans Canada (DFO)\n\nScience documents cited by DFO in the 2024 survey:\n\nhttps://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/41231016.pdf"
+  },
+  {
+    "objectID": "stocks/herring_sog.html#data-gaps-and-caveats",
+    "href": "stocks/herring_sog.html#data-gaps-and-caveats",
+    "title": "Pacific herring, Strait of Georgia",
+    "section": "Data gaps and caveats",
+    "text": "Data gaps and caveats\n\nTime series ends in 2018; the DFO zone is from the 2024 survey.\nNo fishing-pressure ratio relative to MSY, so no Kobe plot.\nLimit reference point taken or derived from RAM Legacy; DFO’s current value may differ.\n\n← Back to all stock cards"
+  },
+  {
+    "objectID": "stocks/herring_hg.html",
+    "href": "stocks/herring_hg.html",
+    "title": "Pacific herring, Haida Gwaii",
+    "section": "",
+    "text": "Exploratory personal project. Not an official assessment and not a seafood recommendation."
+  },
+  {
+    "objectID": "stocks/herring_hg.html#management-context",
+    "href": "stocks/herring_hg.html#management-context",
+    "title": "Pacific herring, Haida Gwaii",
+    "section": "Management context",
+    "text": "Management context\n\nLimit reference point, as described by DFO: 0.3SBo (unfished spawning biomass) or 6,347 tonnes* (median value, estimates are updated annually) *value reported from the 2023 stock assessment, implemented for 2023/24 fishery\nUpper stock reference, as described by DFO: Provisional USRs are considered spawning biomass objectives in the MSE process and are not considered equivalent to the upper control point of the harvest control rule. Haida Gwaii herring reference points are developed through the HG rebuilding plan process.\nLimit used for this project’s indicator: 0.3 x unfished spawning biomass (SSB0 from the 2018 assessment in RAM)\nManagement plan: 2023/24 Pacific Herring IFMP - November 7, 2023 - November 6, 2024\nManaged by: Fisheries and Oceans Canada (DFO)\n\nScience documents cited by DFO in the 2024 survey:\n\nhttps://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/41231016.pdf"
+  },
+  {
+    "objectID": "stocks/herring_hg.html#data-gaps-and-caveats",
+    "href": "stocks/herring_hg.html#data-gaps-and-caveats",
+    "title": "Pacific herring, Haida Gwaii",
+    "section": "Data gaps and caveats",
+    "text": "Data gaps and caveats\n\nTime series ends in 2018; the DFO zone is from the 2024 survey.\nNo fishing-pressure ratio relative to MSY, so no Kobe plot.\nLimit reference point taken or derived from RAM Legacy; DFO’s current value may differ.\n\n← Back to all stock cards"
+  },
+  {
+    "objectID": "stocks/halibut.html",
+    "href": "stocks/halibut.html",
+    "title": "Pacific halibut, coastwide (Canada and US)",
+    "section": "",
+    "text": "Exploratory personal project. Not an official assessment and not a seafood recommendation."
+  },
+  {
+    "objectID": "stocks/halibut.html#kobe-plot",
+    "href": "stocks/halibut.html#kobe-plot",
+    "title": "Pacific halibut, coastwide (Canada and US)",
+    "section": "Kobe plot",
+    "text": "Kobe plot"
+  },
+  {
+    "objectID": "stocks/halibut.html#management-context",
+    "href": "stocks/halibut.html#management-context",
+    "title": "Pacific halibut, coastwide (Canada and US)",
+    "section": "Management context",
+    "text": "Management context\n\nLimit reference point, as described by DFO: LRP set at 0.2 of the equilibrium un-fished female spawning biomass (SB20). At the end of 2023, SB was estimated to be 174,000,000 net lbs. From this, SB20 = 34,800,000 net lbs.\nUpper stock reference, as described by DFO: USR set at 0.3 of the equilibrium un-fished female spawning biomass (SB30). At the end of 2023, SB was estimated to be 174,000,000 net lbs. From this, SB30 = 52,200,000 net lbs.\nLimit used for this project’s indicator: SSBlim from RAM (IPHC limit; the 2024 survey describes the LRP as 0.2 x unfished female spawning biomass)\nManagement plan: Pacific Integrated Fisheries Management Plan - GROUNDFISH - Effective Feb 21, 2024 - Feb 20, 2025 (Current Pacific Integrated Fisheries Management plan - GROUNDFISH - Effective Feb 21, 2025 - Feb 20, 2026)\nManaged by: DFO, co-managed with United States of America via the International Pacific Halibut Commission\n\nScience documents cited by DFO in the 2024 survey:\n\nhttps://www.iphc.int/uploads/2023/12/IPHC-2024-AM100-10-Data-overview-and-stock-assessment.pdf\nhttps://www.iphc.int/uploads/2023/12/IPHC-2024-AM100-12-Projections-and-harvest-decision-table.pdf"
+  },
+  {
+    "objectID": "stocks/halibut.html#data-gaps-and-caveats",
+    "href": "stocks/halibut.html#data-gaps-and-caveats",
+    "title": "Pacific halibut, coastwide (Canada and US)",
+    "section": "Data gaps and caveats",
+    "text": "Data gaps and caveats\n\nTime series ends in 2020; the DFO zone is from the 2024 survey.\nFishing-pressure ratio available only to 2013.\nLimit reference point taken or derived from RAM Legacy; DFO’s current value may differ.\n\n← Back to all stock cards"
+  },
+  {
+    "objectID": "story.html",
+    "href": "story.html",
+    "title": "What do we actually know about BC fish stocks?",
+    "section": "",
+    "text": "Scroll down. The chart on the right changes as you read."
+  },
+  {
+    "objectID": "story.html#what-this-does-and-does-not-show",
+    "href": "story.html#what-this-does-and-does-not-show",
+    "title": "What do we actually know about BC fish stocks?",
+    "section": "What this does and does not show",
+    "text": "What this does and does not show\n\nIt shows what public data say about ten BC stocks, and where those data run out.\nIt does not reproduce DFO’s methods or any seafood recommendation program, and it makes no recommendations.\nAssessment series end between 2018 and 2021, so they can lag DFO’s latest advice.\n\nOpen the map Browse the stock cards Read the methods"
+  },
+  {
+    "objectID": "methods.html",
+    "href": "methods.html",
+    "title": "Methods and data",
+    "section": "",
+    "text": "This project combines two open sources into a small, documented database for ten British Columbia stocks. It applies simple written rules to describe each stock’s status, its history, and the gaps in the evidence. It is a learning project by an epidemiologist who is new to fisheries science. It does not replicate DFO’s methods or those of any seafood recommendation program, and it makes no recommendations."
+  },
+  {
+    "objectID": "methods.html#summary",
+    "href": "methods.html#summary",
+    "title": "Methods and data",
+    "section": "",
+    "text": "This project combines two open sources into a small, documented database for ten British Columbia stocks. It applies simple written rules to describe each stock’s status, its history, and the gaps in the evidence. It is a learning project by an epidemiologist who is new to fisheries science. It does not replicate DFO’s methods or those of any seafood recommendation program, and it makes no recommendations."
+  },
+  {
+    "objectID": "methods.html#data-sources",
+    "href": "methods.html#data-sources",
+    "title": "Methods and data",
+    "section": "Data sources",
+    "text": "Data sources\n\n\n\n\n\n\n\n\n\nSource\nWhat it provides\nVersion\nLicence\n\n\n\n\nDFO Sustainability Survey for Fisheries\nOfficial status zone (Healthy, Cautious, Critical, Uncertain), reference point descriptions, management plans\n2024 results\nOpen Government Licence, Canada\n\n\nRAM Legacy Stock Assessment Database\nAssessment time series (biomass, catch, ratios to MSY) and reference points\nv4.66, assessment-only\nCC BY 4.0\n\n\nDFO Commercial Seafisheries Landings\nLandings by species group, used only as background\n1990 to 2024\nOpen Government Licence, Canada"
+  },
+  {
+    "objectID": "methods.html#data-tiers",
+    "href": "methods.html#data-tiers",
+    "title": "Methods and data",
+    "section": "Data tiers",
+    "text": "Data tiers\nStocks differ in how much public evidence exists. Each stock is assigned a tier, and the tier decides which plots and caveats it gets.\n\n\n\n\n\n\n\n\nTier\nMeaning\nStocks\n\n\n\n\nA\nBiomass and fishing pressure relative to MSY\nSablefish, Pacific halibut\n\n\nB\nBiomass relative to MSY only\nPacific cod (5ABCD)\n\n\nC\nBiomass and catch trends, no MSY ratios\nFive Pacific herring areas\n\n\nD\nDFO status zone only, no assessment time series compiled\nSpot prawn, Dungeness crab"
+  },
+  {
+    "objectID": "methods.html#a-common-indicator",
+    "href": "methods.html#a-common-indicator",
+    "title": "Methods and data",
+    "section": "A common indicator",
+    "text": "A common indicator\nStocks use different reference points, so they cannot be compared directly. For every stock with a time series, this project divides biomass by that stock’s limit reference point (LRP), the level below which DFO considers serious harm to be occurring. A value below 1 means below the limit. The limits are taken or derived from RAM Legacy and are approximate.\n\n\n\n\n\n\n\n\n\n\nStock\nLimit used\nValue\n\n\n\n\nSablefish\n0.4 x Bmsy (DFO default proxy; the 2024 survey reports this LRP for sablefish)\n0.4 × Bmsy\n\n\nPacific halibut\nSSBlim from RAM (IPHC limit; the 2024 survey describes the LRP as 0.2 x unfished female spawning biomass)\n46,720 t\n\n\nPacific cod (5ABCD)\nTBlim from RAM (limit reference point used in the assessment)\n9,762 t\n\n\nHerring: Strait of Georgia\n0.3 x unfished spawning biomass (SSB0 from the 2018 assessment in RAM)\n41,638 t\n\n\nHerring: WCVI\n0.3 x unfished spawning biomass (SSB0 from the 2018 assessment in RAM)\n14,067 t\n\n\nHerring: Central Coast\n0.3 x unfished spawning biomass (SSB0 from the 2018 assessment in RAM)\n16,604 t\n\n\nHerring: Prince Rupert\n0.3 x unfished spawning biomass (SSB0 from the 2018 assessment in RAM)\n18,329 t\n\n\nHerring: Haida Gwaii\n0.3 x unfished spawning biomass (SSB0 from the 2018 assessment in RAM)\n6,929 t"
+  },
+  {
+    "objectID": "methods.html#cross-checks",
+    "href": "methods.html#cross-checks",
+    "title": "Methods and data",
+    "section": "Cross-checks",
+    "text": "Cross-checks\nHerring limits, RAM versus DFO. The LRP implied by RAM’s 2018 values is compared with the value DFO reported in the 2024 survey, extracted automatically from the survey text.\n\n\n\n\n\n\n\n\n\n\n\nStock\nRAM: 0.3 x SSB0 (t)\nDFO 2024 survey (t)\nDifference\n\n\n\n\nHerring: Strait of Georgia\n41,638\n41,547\n0.2%\n\n\nHerring: WCVI\n14,067\n13,961\n0.8%\n\n\nHerring: Central Coast\n16,604\n14,854\n11.8%\n\n\nHerring: Prince Rupert\n18,329\n17,640\n3.9%\n\n\nHerring: Haida Gwaii\n6,929\n6,347\n9.2%\n\n\n\n\n\nSablefish. RAM’s spawning biomass at MSY (22,820 t) is within 0.5% of the Bmsy reported in DFO’s 2024 survey (22,720 t).\nLatest indicator versus DFO’s 2024 zone. A stock below its limit should be in the Critical zone; a stock above it should be Cautious or Healthy.\n\n\n\n\n\n\n\n\n\n\n\n\nStock\nLatest year\nBiomass / LRP\nDFO 2024 zone\nConsistent\n\n\n\n\nPacific halibut\n2020\n1.88\nHealthy\nYes\n\n\nHerring: Central Coast\n2018\n1.97\nCautious\nYes\n\n\nHerring: Haida Gwaii\n2018\n0.65\nCritical\nYes\n\n\nHerring: Prince Rupert\n2018\n1.36\nHealthy\nYes\n\n\nHerring: Strait of Georgia\n2018\n3.03\nHealthy\nYes\n\n\nHerring: WCVI\n2018\n1.45\nCautious\nYes\n\n\nPacific cod (5ABCD)\n2019\n1.61\nNot in survey\nNo zone to compare\n\n\nSablefish\n2021\n2.94\nHealthy\nYes"
+  },
+  {
+    "objectID": "methods.html#data-dictionary",
+    "href": "methods.html#data-dictionary",
+    "title": "Methods and data",
+    "section": "Data dictionary",
+    "text": "Data dictionary"
+  },
+  {
+    "objectID": "methods.html#downloads",
+    "href": "methods.html#downloads",
+    "title": "Methods and data",
+    "section": "Downloads",
+    "text": "Downloads\n\nstocks.csv: one row per stock\ntimeseries.csv: long-format time series, one row per stock, year, and metric\nlandings.csv: BC commercial landings by species group\ndata_dictionary.csv: every field in every table"
+  },
+  {
+    "objectID": "methods.html#how-it-is-built",
+    "href": "methods.html#how-it-is-built",
+    "title": "Methods and data",
+    "section": "How it is built",
+    "text": "How it is built\nAll steps are R scripts in the GitHub repository, run in order:\n\n01_download.R: downloads the raw files.\n04_build_database.R: builds the tidy tables and data dictionary.\n06_harmonise_lrp.R: adds the biomass-to-limit indicator and runs the cross-checks.\n07_make_figures.R and 08_map_cards.R: figures, map, and cards.\n09_render_reports.R: renders one parameterised 2-page PDF per stock.\n10_make_site_files.R, then quarto render: builds this website."
+  },
+  {
+    "objectID": "methods.html#limitations",
+    "href": "methods.html#limitations",
+    "title": "Methods and data",
+    "section": "Limitations",
+    "text": "Limitations\n\nRAM Legacy copies published assessments, so the time series end between 2018 and 2021 and may not match DFO’s latest advice.\nLimit reference points used for the common indicator are approximate, and some are derived rather than official.\nPoint estimates only. Assessment uncertainty is not shown.\nMap pins mark general areas, not stock boundaries.\nNational landings data group several BC species together, so they are not used for stock-level conclusions.\nSpot prawn and Dungeness crab have no compiled time series; their status here relies entirely on DFO’s survey response."
+  },
+  {
+    "objectID": "methods.html#references",
+    "href": "methods.html#references",
+    "title": "Methods and data",
+    "section": "References",
+    "text": "References\n\nFisheries and Oceans Canada (2025). Sustainability Survey for Fisheries, 2024 results. Open Government Portal.\nRAM Legacy Stock Assessment Database (2024). Version 4.66. Zenodo.\nRicard, D., Minto, C., Jensen, O.P. and Baum, J.K. (2012). Evaluating the knowledge base and status of commercially exploited marine species with the RAM Legacy Stock Assessment Database. Fish and Fisheries 13(4): 380 to 398.\nFisheries and Oceans Canada (2009). A fishery decision-making framework incorporating the precautionary approach."
+  },
+  {
+    "objectID": "cards.html",
+    "href": "cards.html",
+    "title": "Stock cards",
+    "section": "",
+    "text": "One card per stock. The badge shows DFO’s 2024 status zone and the data tier shows how much evidence is available. Open “Full stock page” for trends, management context, and a downloadable 2-page summary.\n\n\n\n\n\nSablefish\nSablefish, BC coast\n\n\n\nDFO 2024: Healthy\nData tier A\n\n2.94× LRP\nBiomass relative to the limit reference point, 2021\n\n\nEvidence\nBiomass and fishing pressure relative to MSY\nManaged by\nFisheries and Oceans Canada (DFO)\nStatus method\nScientific Peer Review Process\nAssessment years\n1962-2021\n\n\nData gaps and caveats\n\nTime series ends in 2021; the DFO zone is from the 2024 survey.\n\n\nFun fact: Often sold as 'black cod', although it is not a true cod.\nCoastwide stock; pin position is illustrative.\nFull stock page →\n\n\n\n\nPacific halibut\nPacific halibut, coastwide (Canada and US)\n\n\n\nDFO 2024: Healthy\nData tier A\n\n1.88× LRP\nBiomass relative to the limit reference point, 2020\n\n\nEvidence\nBiomass and fishing pressure relative to MSY\nManaged by\nDFO, co-managed with United States of America via the International Pacific Halibut Commission\nStatus method\nScientific Peer Review Process\nAssessment years\n1992-2020\n\n\nData gaps and caveats\n\nTime series ends in 2020; the DFO zone is from the 2024 survey.\nFishing-pressure ratio available only to 2013.\nLimit reference point taken or derived from RAM Legacy; DFO's current value may differ.\n\n\nFun fact: The largest flatfish in the North Pacific. As it grows, both eyes end up on one side of its head.\nCoastwide stock; pin position is illustrative.\nFull stock page →\n\n\n\n\nPacific cod\nPacific cod, Queen Charlotte Sound and Hecate Strait\n\n\n\nNot in DFO 2024 survey\nData tier B\n\n1.61× LRP\nBiomass relative to the limit reference point, 2019\n\n\nEvidence\nBiomass relative to MSY only\nManaged by\nFisheries and Oceans Canada (DFO)\nStatus method\nNot reported\nAssessment years\n1953-2019\n\n\nData gaps and caveats\n\nNot included in DFO's 2024 Sustainability Survey, so there is no official status zone here.\nNo fishing-pressure ratio relative to MSY, so no Kobe plot.\nLimit reference point taken or derived from RAM Legacy; DFO's current value may differ.\n\n\nFun fact: Also known as grey cod.\nFull stock page →\n\n\n\n\nPacific herring\nPacific herring, Strait of Georgia\n\n\n\nDFO 2024: Healthy\nData tier C\n\n3.03× LRP\nBiomass relative to the limit reference point, 2018\n\n\nEvidence\nBiomass and catch trends, no MSY ratios\nManaged by\nFisheries and Oceans Canada (DFO)\nStatus method\nScientific Peer Review Process\nAssessment years\n1949-2018\n\n\nData gaps and caveats\n\nTime series ends in 2018; the DFO zone is from the 2024 survey.\nNo fishing-pressure ratio relative to MSY, so no Kobe plot.\nLimit reference point taken or derived from RAM Legacy; DFO's current value may differ.\n\n\nFun fact: Herring spawn in shallow coastal water, laying sticky eggs on kelp and eelgrass.\nFull stock page →\n\n\n\n\nPacific herring\nPacific herring, West Coast of Vancouver Island\n\n\n\nDFO 2024: Cautious\nData tier C\n\n1.45× LRP\nBiomass relative to the limit reference point, 2018\n\n\nEvidence\nBiomass and catch trends, no MSY ratios\nManaged by\nFisheries and Oceans Canada (DFO)\nStatus method\nScientific Peer Review Process\nAssessment years\n1949-2018\n\n\nData gaps and caveats\n\nTime series ends in 2018; the DFO zone is from the 2024 survey.\nNo fishing-pressure ratio relative to MSY, so no Kobe plot.\nLimit reference point taken or derived from RAM Legacy; DFO's current value may differ.\n\n\nFun fact: Herring spawn in shallow coastal water, laying sticky eggs on kelp and eelgrass.\nFull stock page →\n\n\n\n\nPacific herring\nPacific herring, Central Coast\n\n\n\nDFO 2024: Cautious\nData tier C\n\n1.97× LRP\nBiomass relative to the limit reference point, 2018\n\n\nEvidence\nBiomass and catch trends, no MSY ratios\nManaged by\nFisheries and Oceans Canada (DFO)\nStatus method\nScientific Peer Review Process\nAssessment years\n1949-2018\n\n\nData gaps and caveats\n\nTime series ends in 2018; the DFO zone is from the 2024 survey.\nNo fishing-pressure ratio relative to MSY, so no Kobe plot.\nLimit reference point taken or derived from RAM Legacy; DFO's current value may differ.\n\n\nFun fact: Herring spawn in shallow coastal water, laying sticky eggs on kelp and eelgrass.\nFull stock page →\n\n\n\n\nPacific herring\nPacific herring, Prince Rupert District\n\n\n\nDFO 2024: Healthy\nData tier C\n\n1.36× LRP\nBiomass relative to the limit reference point, 2018\n\n\nEvidence\nBiomass and catch trends, no MSY ratios\nManaged by\nFisheries and Oceans Canada (DFO)\nStatus method\nScientific Peer Review Process\nAssessment years\n1949-2018\n\n\nData gaps and caveats\n\nTime series ends in 2018; the DFO zone is from the 2024 survey.\nNo fishing-pressure ratio relative to MSY, so no Kobe plot.\nLimit reference point taken or derived from RAM Legacy; DFO's current value may differ.\n\n\nFun fact: Herring spawn in shallow coastal water, laying sticky eggs on kelp and eelgrass.\nFull stock page →\n\n\n\n\nPacific herring\nPacific herring, Haida Gwaii\n\n\n\nDFO 2024: Critical\nData tier C\n\n0.65× LRP\nBiomass relative to the limit reference point, 2018\n\n\nEvidence\nBiomass and catch trends, no MSY ratios\nManaged by\nFisheries and Oceans Canada (DFO)\nStatus method\nScientific Peer Review Process\nAssessment years\n1949-2018\n\n\nData gaps and caveats\n\nTime series ends in 2018; the DFO zone is from the 2024 survey.\nNo fishing-pressure ratio relative to MSY, so no Kobe plot.\nLimit reference point taken or derived from RAM Legacy; DFO's current value may differ.\n\n\nFun fact: Herring spawn in shallow coastal water, laying sticky eggs on kelp and eelgrass.\nFull stock page →\n\n\n\n\nSpot prawn\nSpot prawn, BC coast\n\n\n\nDFO 2024: Healthy\nData tier D\n\nNo biomass time series compiled for this stock.\n\nEvidence\nDFO status zone only, no assessment time series compiled\nManaged by\nFisheries and Oceans Canada (DFO)\nStatus method\nScientific Peer Review Process\nAssessment years\nNot in RAM Legacy\n\n\nData gaps and caveats\n\nNo public assessment time series compiled in this project; status relies on DFO's survey response.\n\n\nFun fact: Spot prawns start life as males and later change to females.\nCoastwide stock; pin position is illustrative.\nFull stock page →\n\n\n\n\nDungeness crab\nDungeness crab, BC coast\n\n\n\nDFO 2024: Healthy\nData tier D\n\nNo biomass time series compiled for this stock.\n\nEvidence\nDFO status zone only, no assessment time series compiled\nManaged by\nFisheries and Oceans Canada (DFO)\nStatus method\nExpert Judgement\nAssessment years\nNot in RAM Legacy\n\n\nData gaps and caveats\n\nNo public assessment time series compiled in this project; status relies on DFO's survey response.\nDFO status based on expert judgement rather than a model-based assessment.\n\n\nFun fact: Named after Dungeness, a small town in Washington State.\nCoastwide stock; pin position is illustrative.\nFull stock page →"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ten BC fish stocks. Seventy years of evidence.",
+    "section": "",
+    "text": "Exploratory rapid assessment toolkit · R · Quarto · open data\n\n\nAn open-data look at the status of ten British Columbia fish and shellfish stocks, how they have changed, and how much evidence sits behind each one.\nExplore the map Read the story\nBackground: average Pacific herring biomass relative to the limit reference point across five areas, one stripe per year, 1951 to 2018.\n10\nstocks across 6 species\n\n\n8\nwith an assessment time series\n\n\n71\nyears of biomass estimates (1951 to 2021)\n\n\n7/7\nassessed stocks where the latest estimate agrees with DFO's 2024 zone\n\n\n1\nstock below its limit reference point in its latest year"
+  },
+  {
+    "objectID": "index.html#map",
+    "href": "index.html#map",
+    "title": "Ten BC fish stocks. Seventy years of evidence.",
+    "section": "Where the stocks are",
+    "text": "Where the stocks are"
+  },
+  {
+    "objectID": "index.html#seventy-years-in-one-picture",
+    "href": "index.html#seventy-years-in-one-picture",
+    "title": "Ten BC fish stocks. Seventy years of evidence.",
+    "section": "Seventy years in one picture",
+    "text": "Seventy years in one picture\n\nEach row is a stock and each stripe is a year. Red years are below the stock’s limit reference point, the level below which DFO considers serious harm to be occurring. Herring rows show a coast-wide low in the late 1960s and a second, later low on the West Coast of Vancouver Island and the Central Coast. Haida Gwaii herring is the one stock below its limit in its most recent year, which matches its Critical zone in DFO’s 2024 survey."
+  },
+  {
+    "objectID": "index.html#what-this-is-and-what-it-is-not",
+    "href": "index.html#what-this-is-and-what-it-is-not",
+    "title": "Ten BC fish stocks. Seventy years of evidence.",
+    "section": "What this is, and what it is not",
+    "text": "What this is, and what it is not\n\nIt compiles public data from Fisheries and Oceans Canada (DFO) and the RAM Legacy Stock Assessment Database into one documented database.\nIt applies simple, written-down rules to show status, trends, and data gaps for each stock.\nIt is not an official assessment. It does not reproduce the methodology of any seafood recommendation program, and it makes no recommendations about what to buy or eat.\nAssessment time series end between 2018 and 2021, so they can lag DFO’s latest advice."
+  },
+  {
+    "objectID": "explore.html",
+    "href": "explore.html",
+    "title": "Explore",
+    "section": "",
+    "text": "A Kobe plot places a stock by its biomass (horizontal) and fishing pressure (vertical), both relative to the levels that would produce maximum sustainable yield (MSY). Green means more fish than the MSY level and less fishing than the MSY rate. Red means the opposite. Press Play to draw each stock’s path year by year, or drag the slider.\nOnly sablefish and Pacific halibut have both ratios in the RAM Legacy database. Halibut fishing-pressure ratios are available for 2000 to 2013 only."
+  },
+  {
+    "objectID": "explore.html#watch-the-kobe-plot-unfold",
+    "href": "explore.html#watch-the-kobe-plot-unfold",
+    "title": "Explore",
+    "section": "",
+    "text": "A Kobe plot places a stock by its biomass (horizontal) and fishing pressure (vertical), both relative to the levels that would produce maximum sustainable yield (MSY). Green means more fish than the MSY level and less fishing than the MSY rate. Red means the opposite. Press Play to draw each stock’s path year by year, or drag the slider.\nOnly sablefish and Pacific halibut have both ratios in the RAM Legacy database. Halibut fishing-pressure ratios are available for 2000 to 2013 only."
+  },
+  {
+    "objectID": "explore.html#every-assessed-stock-year-by-year",
+    "href": "explore.html#every-assessed-stock-year-by-year",
+    "title": "Explore",
+    "section": "Every assessed stock, year by year",
+    "text": "Every assessed stock, year by year\nEach tile is one year of estimated biomass relative to the stock’s limit reference point. Red tiles are below the limit; blue tiles are above it. Hover over a tile for the value."
+  },
+  {
+    "objectID": "explore.html#herring-up-close",
+    "href": "explore.html#herring-up-close",
+    "title": "Explore",
+    "section": "Herring up close",
+    "text": "Herring up close\n\nPacific herring is assessed separately in five major areas. All five show a low period in the late 1960s. The West Coast of Vancouver Island and the Central Coast had a second low period in the mid to late 2000s. Haida Gwaii spent most years after 2000 below its limit."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I’m Emma Branch, an epidemiologist and data analyst, and a PhD candidate at the University of British Columbia. I mostly work in R, SAS, and SQL, and use Quarto, Shiny, and leaflet when the results need to be readable by actual humans.\nI’m new to fisheries science. The quickest way I know to learn a field is to get my hands on its data, so I built this to get to grips with the basics (stock assessment, reference points, and DFO’s Precautionary Approach). It also let me apply the habits I’ve picked up in health research: a tidy database with a data dictionary, rule-based checks, parameterised reports, and being upfront about what the data can’t tell you.\nThis is an exploratory personal project. It isn’t an official assessment, it doesn’t reproduce any seafood recommendation program’s methods, and it makes no recommendations. Any mistakes are mine, and corrections are very welcome through the GitHub repository."
+  },
+  {
+    "objectID": "about.html#other-projects",
+    "href": "about.html#other-projects",
+    "title": "About",
+    "section": "Other projects",
+    "text": "Other projects\n\nBC Salmon Explorer: an R Shiny app for exploring decades of BC salmon spawner counts.\nBC lightstation sea temperature QC: quality control and documentation of CIOOS lightstation data, including the 2014 to 2016 marine heatwave."
+  },
+  {
+    "objectID": "about.html#acknowledgements",
+    "href": "about.html#acknowledgements",
+    "title": "About",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThanks to Fisheries and Oceans Canada for publishing the Sustainability Survey for Fisheries as open data, and to the RAM Legacy Stock Assessment Database team and the many assessment scientists whose work it brings together."
+  },
+  {
+    "objectID": "stocks/dungeness.html",
+    "href": "stocks/dungeness.html",
+    "title": "Dungeness crab, BC coast",
+    "section": "",
+    "text": "Exploratory personal project. Not an official assessment and not a seafood recommendation."
+  },
+  {
+    "objectID": "stocks/dungeness.html#management-context",
+    "href": "stocks/dungeness.html#management-context",
+    "title": "Dungeness crab, BC coast",
+    "section": "Management context",
+    "text": "Management context\n\nLimit reference point, as described by DFO: Not reported\nUpper stock reference, as described by DFO: Not reported\nLimit used for this project’s indicator: None (no time series compiled)\nManagement plan: Pacific Region Integrated Fisheries Management Plan - Crab By Trap, April 1, 2024 - March 31, 2025\nManaged by: Fisheries and Oceans Canada (DFO)\n\nScience documents cited by DFO in the 2024 survey:\n\nhttps://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/41230383.pdf"
+  },
+  {
+    "objectID": "stocks/dungeness.html#data-gaps-and-caveats",
+    "href": "stocks/dungeness.html#data-gaps-and-caveats",
+    "title": "Dungeness crab, BC coast",
+    "section": "Data gaps and caveats",
+    "text": "Data gaps and caveats\n\nNo public assessment time series compiled in this project; status relies on DFO’s survey response.\nDFO status based on expert judgement rather than a model-based assessment.\n\n← Back to all stock cards"
+  },
+  {
+    "objectID": "stocks/herring_cc.html",
+    "href": "stocks/herring_cc.html",
+    "title": "Pacific herring, Central Coast",
+    "section": "",
+    "text": "Exploratory personal project. Not an official assessment and not a seafood recommendation."
+  },
+  {
+    "objectID": "stocks/herring_cc.html#management-context",
+    "href": "stocks/herring_cc.html#management-context",
+    "title": "Pacific herring, Central Coast",
+    "section": "Management context",
+    "text": "Management context\n\nLimit reference point, as described by DFO: 0.3SBo (unfished spawning biomass) or 14,854 tonnes* (estimates are updated annually) *value reported from the 2023 stock assessment, implemented for 2023/24 fishery\nUpper stock reference, as described by DFO: Implementation of USRs occurred through the 2023/24 Pacific Herring IFMP. For the CC stock, the USR for was set at the average spawning biomass during the productive period (1990-1999). Provisional USRs are considered spawning biomass objectives in the MSE process and are not considered equivalent to the upper control point of the harvest control rule.\nLimit used for this project’s indicator: 0.3 x unfished spawning biomass (SSB0 from the 2018 assessment in RAM)\nManagement plan: 2023/24 Pacific Herring IFMP - November 7, 2023 - November 6, 2024\nManaged by: Fisheries and Oceans Canada (DFO)\n\nScience documents cited by DFO in the 2024 survey:\n\nhttps://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/41231016.pdf"
+  },
+  {
+    "objectID": "stocks/herring_cc.html#data-gaps-and-caveats",
+    "href": "stocks/herring_cc.html#data-gaps-and-caveats",
+    "title": "Pacific herring, Central Coast",
+    "section": "Data gaps and caveats",
+    "text": "Data gaps and caveats\n\nTime series ends in 2018; the DFO zone is from the 2024 survey.\nNo fishing-pressure ratio relative to MSY, so no Kobe plot.\nLimit reference point taken or derived from RAM Legacy; DFO’s current value may differ.\n\n← Back to all stock cards"
+  },
+  {
+    "objectID": "stocks/herring_prd.html",
+    "href": "stocks/herring_prd.html",
+    "title": "Pacific herring, Prince Rupert District",
+    "section": "",
+    "text": "Exploratory personal project. Not an official assessment and not a seafood recommendation."
+  },
+  {
+    "objectID": "stocks/herring_prd.html#management-context",
+    "href": "stocks/herring_prd.html#management-context",
+    "title": "Pacific herring, Prince Rupert District",
+    "section": "Management context",
+    "text": "Management context\n\nLimit reference point, as described by DFO: 0.3SBo (unfished spawning biomass) or 17,640 tonnes* (estimates are updated annually) *value reported from the 2023 stock assessment, implemented for 2023/24 fishery\nUpper stock reference, as described by DFO: Implementation of USRs occurred through the 2023/24 Pacific Herring IFMP. For the PRD stock, the USR for was set at the average spawning biomass during the productive period (1983-1992). Provisional USRs are considered spawning biomass objectives in the MSE process and are not considered equivalent to the upper control point of the harvest control rule.\nLimit used for this project’s indicator: 0.3 x unfished spawning biomass (SSB0 from the 2018 assessment in RAM)\nManagement plan: 2023/24 Pacific Herring IFMP - November 7, 2023 - November 6, 2024\nManaged by: Fisheries and Oceans Canada (DFO)\n\nScience documents cited by DFO in the 2024 survey:\n\nhttps://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/41231016.pdf"
+  },
+  {
+    "objectID": "stocks/herring_prd.html#data-gaps-and-caveats",
+    "href": "stocks/herring_prd.html#data-gaps-and-caveats",
+    "title": "Pacific herring, Prince Rupert District",
+    "section": "Data gaps and caveats",
+    "text": "Data gaps and caveats\n\nTime series ends in 2018; the DFO zone is from the 2024 survey.\nNo fishing-pressure ratio relative to MSY, so no Kobe plot.\nLimit reference point taken or derived from RAM Legacy; DFO’s current value may differ.\n\n← Back to all stock cards"
+  },
+  {
+    "objectID": "stocks/herring_wcvi.html",
+    "href": "stocks/herring_wcvi.html",
+    "title": "Pacific herring, West Coast of Vancouver Island",
+    "section": "",
+    "text": "Exploratory personal project. Not an official assessment and not a seafood recommendation."
+  },
+  {
+    "objectID": "stocks/herring_wcvi.html#management-context",
+    "href": "stocks/herring_wcvi.html#management-context",
+    "title": "Pacific herring, West Coast of Vancouver Island",
+    "section": "Management context",
+    "text": "Management context\n\nLimit reference point, as described by DFO: 0.3SBo (unfished spawning biomass) or 13,961 tonnes* (estimates are updated annually) *value reported from the 2023 stock assessment, implemented for 2023/24 fishery\nUpper stock reference, as described by DFO: Candidate USRs are provided for this stock and all represent a proportion of spawning biomass (SB) or unfished spawning biomass (SBo). Candidate USRs are considered spawning biomass objectives in the MSE process and are not considered equivalent to the upper control point of the harvest control rule. Implementation of USRs occurred through the 2023/24 Pacific Herring IFMP. For the WCVI stock, the USR for was set at the average spawning biomass during the productive period (1990-1999).\nLimit used for this project’s indicator: 0.3 x unfished spawning biomass (SSB0 from the 2018 assessment in RAM)\nManagement plan: 2023/24 Pacific Herring IFMP - November 7, 2023 - November 6, 2024\nManaged by: Fisheries and Oceans Canada (DFO)\n\nScience documents cited by DFO in the 2024 survey:\n\nhttps://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/41231016.pdf"
+  },
+  {
+    "objectID": "stocks/herring_wcvi.html#data-gaps-and-caveats",
+    "href": "stocks/herring_wcvi.html#data-gaps-and-caveats",
+    "title": "Pacific herring, West Coast of Vancouver Island",
+    "section": "Data gaps and caveats",
+    "text": "Data gaps and caveats\n\nTime series ends in 2018; the DFO zone is from the 2024 survey.\nNo fishing-pressure ratio relative to MSY, so no Kobe plot.\nLimit reference point taken or derived from RAM Legacy; DFO’s current value may differ.\n\n← Back to all stock cards"
+  },
+  {
+    "objectID": "stocks/sablefish.html",
+    "href": "stocks/sablefish.html",
+    "title": "Sablefish, BC coast",
+    "section": "",
+    "text": "Exploratory personal project. Not an official assessment and not a seafood recommendation."
+  },
+  {
+    "objectID": "stocks/sablefish.html#kobe-plot",
+    "href": "stocks/sablefish.html#kobe-plot",
+    "title": "Sablefish, BC coast",
+    "section": "Kobe plot",
+    "text": "Kobe plot"
+  },
+  {
+    "objectID": "stocks/sablefish.html#management-context",
+    "href": "stocks/sablefish.html#management-context",
+    "title": "Sablefish, BC coast",
+    "section": "Management context",
+    "text": "Management context\n\nLimit reference point, as described by DFO: 0.4 of BMSY, where BMSY is 22,720 metric tonnes Estimated reference points in 2022 available from: https://www.dfo-mpo.gc.ca/csas-sccs/Publications/SAR-AS/2023/2023_010-eng.html\nUpper stock reference, as described by DFO: 0.8 of BMSY, where BMSY is 22,720 metric tonnes. Estimated reference points in 2022 available from: https://www.dfo-mpo.gc.ca/csas-sccs/Publications/SAR-AS/2023/2023_010-eng.html\nLimit used for this project’s indicator: 0.4 x Bmsy (DFO default proxy; the 2024 survey reports this LRP for sablefish)\nManagement plan: Pacific Integrated Fisheries Management Plan - GROUNDFISH - Effective Feb 21, 2024 - Feb 20, 2025 (Current Pacific Integrated Fisheries Management plan - GROUNDFISH - Effective Feb 21, 2025 - Feb 20, 2026)\nManaged by: Fisheries and Oceans Canada (DFO)\n\nScience documents cited by DFO in the 2024 survey:\n\nhttp://www.dfo-mpo.gc.ca/csas-sccs/Publications/ScR-RS/2020/2020_025-eng.html\nhttps://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/41102587.pdf\nhttp://waves-vagues.dfo-mpo.gc.ca/Library/344257.pdf\nhttps://www.dfo-mpo.gc.ca/csas-sccs/Publications/ScR-RS/2024/2024_013-eng.html"
+  },
+  {
+    "objectID": "stocks/sablefish.html#data-gaps-and-caveats",
+    "href": "stocks/sablefish.html#data-gaps-and-caveats",
+    "title": "Sablefish, BC coast",
+    "section": "Data gaps and caveats",
+    "text": "Data gaps and caveats\n\nTime series ends in 2021; the DFO zone is from the 2024 survey.\n\n← Back to all stock cards"
+  }
+]

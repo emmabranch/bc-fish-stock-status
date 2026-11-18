@@ -1,0 +1,7 @@
+---
+title: "Dungeness crab, BC coast"
+params:
+  stock_id: "dungeness"
+---
+
+{{< include ../_stock_page.qmd >}}

@@ -1,0 +1,7 @@
+---
+title: "Pacific herring, West Coast of Vancouver Island"
+params:
+  stock_id: "herring_wcvi"
+---
+
+{{< include ../_stock_page.qmd >}}

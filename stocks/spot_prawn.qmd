@@ -1,0 +1,7 @@
+---
+title: "Spot prawn, BC coast"
+params:
+  stock_id: "spot_prawn"
+---
+
+{{< include ../_stock_page.qmd >}}

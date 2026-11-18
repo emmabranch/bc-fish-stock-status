@@ -1,0 +1,7 @@
+---
+title: "Sablefish, BC coast"
+params:
+  stock_id: "sablefish"
+---
+
+{{< include ../_stock_page.qmd >}}

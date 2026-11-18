@@ -1,0 +1,18 @@
+---
+title: "About"
+---
+
+I'm Emma Branch, an epidemiologist and data analyst, and a PhD candidate at the University of British Columbia. I mostly work in R, SAS, and SQL, and use Quarto, Shiny, and leaflet when the results need to be readable by actual humans.
+
+I'm new to fisheries science. The quickest way I know to learn a field is to get my hands on its data, so I built this to get to grips with the basics (stock assessment, reference points, and DFO's Precautionary Approach). It also let me apply the habits I've picked up in health research: a tidy database with a data dictionary, rule-based checks, parameterised reports, and being upfront about what the data can't tell you.
+
+This is an exploratory personal project. It isn't an official assessment, it doesn't reproduce any seafood recommendation program's methods, and it makes no recommendations. Any mistakes are mine, and corrections are very welcome through the GitHub repository.
+
+## Other projects
+
+- [BC Salmon Explorer](https://emmabranch.shinyapps.io/bc-salmon-explorer): an R Shiny app for exploring decades of BC salmon spawner counts.
+- [BC lightstation sea temperature QC](https://github.com/emmabranch/bc-lightstation-qc): quality control and documentation of CIOOS lightstation data, including the 2014 to 2016 marine heatwave.
+
+## Acknowledgements
+
+Thanks to Fisheries and Oceans Canada for publishing the Sustainability Survey for Fisheries as open data, and to the RAM Legacy Stock Assessment Database team and the many assessment scientists whose work it brings together.

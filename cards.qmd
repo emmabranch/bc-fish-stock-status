@@ -1,0 +1,22 @@
+---
+title: "Stock cards"
+page-layout: full
+---
+
+One card per stock. The badge shows DFO's 2024 status zone and the data tier shows how much evidence is available. Open "Full stock page" for trends, management context, and a downloadable 2-page summary.
+
+```{r}
+#| label: grid
+source(here::here("R", "functions.R"))
+source(here::here("R", "plot_functions.R"))
+source(here::here("R", "card_functions.R"))
+
+stocks     <- readr::read_csv(here::here("data", "processed", "stocks.csv"), show_col_types = FALSE)
+timeseries <- readr::read_csv(here::here("data", "processed", "timeseries.csv"), show_col_types = FALSE)
+cards      <- make_card_data(stocks, timeseries)
+
+div(class = "card-grid",
+    lapply(seq_len(nrow(cards)), \(i) {
+      make_card(cards[i, ], link = paste0("stocks/", cards$stock_id[i], ".html"))
+    }))
+```

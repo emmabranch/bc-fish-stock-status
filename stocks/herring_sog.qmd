@@ -1,0 +1,7 @@
+---
+title: "Pacific herring, Strait of Georgia"
+params:
+  stock_id: "herring_sog"
+---
+
+{{< include ../_stock_page.qmd >}}
