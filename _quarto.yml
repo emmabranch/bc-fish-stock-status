@@ -41,8 +41,9 @@ website:
 
 format:
   html:
-    theme: [flatly, theme.scss]
+    theme: [flatly, brand, brand.scss, theme.scss]
     css: cards.css
+    include-after-body: footer.html
     toc: false
 
 execute:
