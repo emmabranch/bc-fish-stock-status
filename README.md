@@ -1,12 +1,14 @@
 # BC fish stock status: an exploratory rapid assessment toolkit
 
-**Live site:** https://emmabranch.github.io/bc-fish-stock-status/
-
 An exploratory, open-data project that compiles the status of ten British Columbia fish and shellfish stocks into a documented database, and produces standardised figures, a parameterised 2-page report for each stock, and a website.
+
+**Live site:** https://emmabranch.github.io/bc-fish-stock-status/ · **More projects:** [github.com/emmabranch](https://github.com/emmabranch)
+
+![Screenshot of the BC fish stock status website](images/screenshot.png)
 
 > **Disclaimer.** This is a personal learning project. It is not an official stock assessment, it does not reproduce the methodology of any seafood recommendation program, and it makes no recommendations about what to buy or eat. Assessment time series end between 2018 and 2021 and may lag DFO's latest advice.
 
-## What is in it
+## What it does
 
 - **A small relational database** (`data/processed/`): one row per stock (`stocks.csv`), long-format time series (`timeseries.csv`), BC landings by species group (`landings.csv`), and a data dictionary covering every field (`data_dictionary.csv`).
 - **A common indicator**: biomass divided by each stock's limit reference point (LRP), so stocks with different reference points can be compared. Values below 1 are below the limit.
@@ -25,7 +27,7 @@ An exploratory, open-data project that compiles the status of ten British Columb
 | C | Biomass and catch trends, no MSY ratios | Pacific herring: Strait of Georgia, West Coast of Vancouver Island, Central Coast, Prince Rupert District, Haida Gwaii |
 | D | DFO status zone only, no time series compiled | Spot prawn; Dungeness crab |
 
-## Data sources
+## Data and licences
 
 | Source | Used for | Version | Licence |
 |:--|:--|:--|:--|
@@ -34,6 +36,25 @@ An exploratory, open-data project that compiles the status of ten British Columb
 | DFO Commercial Seafisheries Landings | Landings by species group (background only) | 1990 to 2024 | Open Government Licence, Canada |
 
 Raw files are not committed. `R/01_download.R` downloads them into `data/raw/`.
+
+### Citation for data
+
+- Fisheries and Oceans Canada. Sustainability Survey for Fisheries, 2024 results. Open Government Portal.
+- RAM Legacy Stock Assessment Database (2024). Version 4.66. Zenodo.
+- Ricard, D., Minto, C., Jensen, O.P. and Baum, J.K. (2012). Evaluating the knowledge base and status of commercially exploited marine species with the RAM Legacy Stock Assessment Database. *Fish and Fisheries* 13(4): 380 to 398.
+
+## Repository structure
+
+```
+R/                 analysis scripts and shared functions
+data/processed/    tidy tables and data dictionary (committed)
+data/raw/          downloaded source files (not committed)
+figures/           saved figures
+images/            README screenshot
+reports/           parameterised report template and PDF outputs
+stocks/            one website page per stock (generated)
+docs/              rendered website (served by GitHub Pages)
+```
 
 ## How to reproduce
 
@@ -51,18 +72,6 @@ Requires R (4.3 or later), Quarto (1.4 or later), and the packages installed by 
 
 Scripts `02_inspect.R` and `03_explore_stocks.R` are exploratory checks and are not needed to rebuild the outputs.
 
-## Repository structure
-
-```
-R/                 analysis scripts and shared functions
-data/processed/    tidy tables and data dictionary (committed)
-data/raw/          downloaded source files (not committed)
-figures/           saved figures
-reports/           parameterised report template and PDF outputs
-stocks/            one website page per stock (generated)
-docs/              rendered website (served by GitHub Pages)
-```
-
 ## Limitations
 
 - RAM Legacy copies published assessments, so time series end between 2018 and 2021.
@@ -71,12 +80,10 @@ docs/              rendered website (served by GitHub Pages)
 - Map pins mark general areas, not stock boundaries.
 - National landings data group several BC species together and are not used for stock-level conclusions.
 
-## About
+## About me
 
-Built by Emma Branch, an epidemiologist and data analyst who is new to fisheries science, as a way to learn the field's core concepts through its public data. Corrections are welcome through GitHub issues.
+I'm new to fisheries science, and built this as a way to learn the field's core concepts through its public data. Corrections are welcome through GitHub issues.
 
-## Citation for data
+I'm Emma Branch, an epidemiologist and data analyst in British Columbia, and a PhD candidate in Population and Public Health at the University of British Columbia. I've spent about 10 years working with health research data, including registry analytics, REDCap database design, data governance, and performance measurement. I mostly work in R, SAS, and SQL, and build reports and tools with Quarto, Shiny, leaflet, and Power BI. Lately I've been applying the same habits to environmental and ocean data, mostly because I like maps and fish.
 
-- Fisheries and Oceans Canada. Sustainability Survey for Fisheries, 2024 results. Open Government Portal.
-- RAM Legacy Stock Assessment Database (2024). Version 4.66. Zenodo.
-- Ricard, D., Minto, C., Jensen, O.P. and Baum, J.K. (2012). Evaluating the knowledge base and status of commercially exploited marine species with the RAM Legacy Stock Assessment Database. *Fish and Fisheries* 13(4): 380 to 398.
+[More projects](https://github.com/emmabranch) · [LinkedIn](https://www.linkedin.com/in/embranch/) · emma.branch@gmail.com
