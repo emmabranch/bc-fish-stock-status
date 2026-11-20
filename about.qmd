@@ -8,10 +8,14 @@ I'm new to fisheries science. The quickest way I know to learn a field is to get
 
 This is an exploratory personal project. It isn't an official assessment, it doesn't reproduce any seafood recommendation program's methods, and it makes no recommendations. Any mistakes are mine, and corrections are very welcome through the GitHub repository.
 
+## Code and data
+
+All the code is on [GitHub](https://github.com/emmabranch/bc-fish-stock-status), and the processed data can be downloaded from the [Methods and data](methods.qmd#downloads) page.
+
 ## Other projects
 
 - [BC Salmon Explorer](https://emmabranch.shinyapps.io/bc-salmon-explorer): an R Shiny app for exploring decades of BC salmon spawner counts.
-- [BC lightstation sea temperature QC](https://github.com/emmabranch/bc-lightstation-qc): quality control and documentation of CIOOS lightstation data, including the 2014 to 2016 marine heatwave.
+- [BC lightstation sea temperatures](https://emmabranch.github.io/bc-lightstation-qc/): quality control and documentation of CIOOS lightstation data, including the 2014 to 2016 marine heatwave.
 
 ## Acknowledgements
 

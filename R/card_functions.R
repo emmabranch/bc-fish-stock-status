@@ -108,7 +108,7 @@ make_gaps <- function(s) {
 }
 
 # ---- One card ----
-make_card <- function(s, link = NULL, spark_dir = here::here("figures", "sparklines")) {
+make_card <- function(s, link = NULL, spark_dir = here::here("figures", "sparklines"), show_gaps = TRUE) {
   zone <- coalesce(s$dfo_status_zone, "Not in survey")
   zcol <- zone_cols[[zone]]
   scol <- species_cols[[s$species]]
@@ -144,10 +144,11 @@ make_card <- function(s, link = NULL, spark_dir = here::here("figures", "sparkli
         tags$dt("Evidence"),         tags$dd(s$data_tier_label),
         tags$dt("Managed by"),       tags$dd(s$manager),
         tags$dt("Status method"),    tags$dd(coalesce(s$status_method, "Not reported")),
-        tags$dt("Assessment years"), tags$dd(coalesce(s$ram_assess_years, "Not in RAM Legacy"))
-      ),
-      div(class = "gaps", strong("Data gaps and caveats"),
-          tags$ul(lapply(make_gaps(s), tags$li))),
+        tags$dt("RAM assessment period"), tags$dd(coalesce(s$ram_assess_years, "Not in RAM Legacy"))
+        ),
+      if (show_gaps) div(class = "gaps", strong("Data gaps and caveats"),
+                         tags$ul(lapply(make_gaps(s), tags$li))),
+      
       if (!is.na(s$fun_fact)) div(class = "fun", paste("Fun fact:", s$fun_fact)),
       if (!is.na(s$location_note)) div(class = "note", s$location_note),
       if (!is.null(link)) a(class = "more", href = link, "Full stock page \u2192")

@@ -21,7 +21,7 @@ Exploratory personal project. Not an official assessment and not a seafood recom
 :::: {.column width="36%"}
 ```{r}
 #| label: card
-make_card(s)
+make_card(s, show_gaps = FALSE)
 ```
 ::::
 
@@ -68,14 +68,16 @@ if (s$data_tier == "A") {
 ```{r}
 #| label: management
 #| results: asis
+# DFO text is shown in quotation marks, exactly as published
+q <- function(x) if (is.na(x)) "Not reported" else paste0("\u201c", md_escape(x), "\u201d")
 mgmt <- c(
-  glue("**Limit reference point, as described by DFO:** {md_escape(coalesce(s$lrp_description, 'Not reported'))}"),
-  glue("**Upper stock reference, as described by DFO:** {md_escape(coalesce(s$usr_description, 'Not reported'))}"),
+  glue("**Limit reference point, as described by DFO:** {q(s$lrp_description)}"),
+  glue("**Upper stock reference, as described by DFO:** {q(s$usr_description)}"),
   glue("**Limit used for this project's indicator:** {md_escape(coalesce(s$lrp_basis, 'None (no time series compiled)'))}"),
-  glue("**Management plan:** {md_escape(coalesce(s$ifmp, 'Not reported'))}"),
+  glue("**Management plan, as reported by DFO:** {q(s$ifmp)}"),
   glue("**Managed by:** {md_escape(s$manager)}")
 )
-cat("\n")
+cat("\nText in quotation marks is copied exactly as published in DFO's 2024 Sustainability Survey for Fisheries, including any typos.\n\n")
 cat(paste0("- ", mgmt), sep = "\n")
 
 links <- str_extract_all(coalesce(s$science_report_links, ""), "https?://\\S+")[[1]]

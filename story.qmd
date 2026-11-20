@@ -29,7 +29,7 @@ Ten stocks, six species: sablefish, Pacific halibut, Pacific cod, Pacific herrin
 
 Nine of them are in DFO's 2024 Sustainability Survey for Fisheries, which gives each an official status zone: Healthy, Cautious, or Critical. The dots on the right show those zones. Pacific cod is not in the 2024 survey. @cr-evidence
 
-The evidence behind the zones varies a lot. Herring assessments go back to 1951. Sablefish and halibut also have a measure of fishing pressure, shown by the thinner dark bars. @cr-evidence
+The evidence behind the zones varies a lot. Herring biomass estimates go back to 1951. Sablefish and halibut also have a measure of fishing pressure, shown by the thinner dark bars. @cr-evidence
 
 Spot prawn and Dungeness crab have no public assessment time series compiled in this project. Their zones come entirely from DFO's survey response; for Dungeness crab, that response records expert judgement. @cr-evidence
 
