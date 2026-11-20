@@ -37,6 +37,8 @@ An exploratory, open-data project that compiles the status of ten British Columb
 
 Raw files are not committed. `R/01_download.R` downloads them into `data/raw/`.
 
+Code: MIT licence (see [`LICENSE`](LICENSE)). Data keep their original licences, listed above.
+
 ### Citation for data
 
 - Fisheries and Oceans Canada. Sustainability Survey for Fisheries, 2024 results. Open Government Portal.
