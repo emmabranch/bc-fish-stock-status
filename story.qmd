@@ -3,13 +3,17 @@ title: "What do we actually know about BC fish stocks?"
 subtitle: "A short scrolling story. Exploratory personal project; not an official assessment."
 format:
   closeread-html:
-    theme: [flatly, theme.scss]
+    theme: [flatly, brand, brand.scss, theme.scss]
     css: cards.css
+    include-after-body: footer.html
     cr-section:
       layout: "sidebar-left"
     cr-style:
-      narrative-background-color-sidebar: "#f1f4f7"
-      section-background-color: "#ffffff"
+      section-background-color: "#f6f4ef"
+      narrative-background-color-sidebar: "#f6f4ef"
+      narrative-text-color-sidebar: "#1f2a33"
+      narrative-background-color-overlay: "rgba(11, 34, 51, 0.92)"
+      narrative-text-color-overlay: "#ffffff"
 ---
 
 ```{r}
@@ -21,7 +25,7 @@ stocks     <- readr::read_csv(here::here("data", "processed", "stocks.csv"), sho
 timeseries <- readr::read_csv(here::here("data", "processed", "timeseries.csv"), show_col_types = FALSE)
 ```
 
-Scroll down. The chart on the right changes as you read.
+Scroll down. The chart changes as you read.
 
 :::{.cr-section}
 

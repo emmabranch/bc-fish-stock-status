@@ -49,9 +49,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4ae8758e12efc5730e582f69d28ae0f5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-e8140c98f28db5e9998a8401fc702e8a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-4ae8758e12efc5730e582f69d28ae0f5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-eb73bbf1ff9828ecf8a569635460a873.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-df8ae12ea172761fd69dfcce534384a0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-eb73bbf1ff9828ecf8a569635460a873.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -279,6 +279,14 @@ ul.task-list li input[type="checkbox"] {
       if (qfoot) qfoot.parentNode.insertBefore(foot, qfoot);
       else document.body.appendChild(foot);
     }
+    /* On phones, close the navbar menu after a link is tapped. Links to a
+       section of the same page don't reload it, so the menu would stay open. */
+    document.querySelectorAll(".navbar-collapse .nav-link:not(.dropdown-toggle)").forEach(function (link) {
+      link.addEventListener("click", function () {
+        var menu = document.querySelector(".navbar-collapse.show");
+        if (menu && window.bootstrap) window.bootstrap.Collapse.getOrCreateInstance(menu).hide();
+      });
+    });
     /* Hide Quarto's empty footer columns so they don't add space on phones */
     document.querySelectorAll(".nav-footer-left, .nav-footer-right").forEach(function (el) {
       if (!el.children.length && !el.textContent.replace(/[\s\u00a0]/g, "")) el.style.display = "none";
