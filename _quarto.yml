@@ -10,6 +10,7 @@ project:
     - story.qmd
     - stocks/*.qmd
   resources:
+    - .nojekyll
     - reports/output/*.pdf
     - data/processed/*.csv
     - figures/*.png
