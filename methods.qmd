@@ -119,10 +119,12 @@ All steps are R scripts in the [GitHub repository](https://github.com/emmabranch
 
 1. `01_download.R`: downloads the raw files.
 2. `04_build_database.R`: builds the tidy tables and data dictionary.
-3. `06_harmonise_lrp.R`: adds the biomass-to-limit indicator and runs the cross-checks.
-4. `07_make_figures.R` and `08_map_cards.R`: figures, map, and cards.
-5. `09_render_reports.R`: renders one parameterised 2-page PDF per stock.
-6. `10_make_site_files.R`, then `quarto render`: builds this website.
+3. `05_herring_stripes.R`: herring biomass stripes for the Explore page.
+4. `06_harmonise_lrp.R`: adds the biomass-to-limit indicator and runs the cross-checks.
+5. `07_make_figures.R` and `08_map_cards.R`: figures, map, and cards.
+6. `09_render_reports.R`: renders one parameterised 2-page PDF per stock.
+7. `10_make_site_files.R` and `11_make_banner.R`: stock pages, card styles, and the home page banner.
+8. `quarto render`: builds this website.
 
 ## Limitations
 

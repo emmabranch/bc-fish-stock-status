@@ -62,6 +62,12 @@ make_card_data <- function(stocks, timeseries) {
     ungroup() |>
     select(stock_id, latest_year = year, latest_b_lrp = value)
   
+  # First and last year with a biomass estimate (can differ from RAM's assessment period)
+  b_span <- timeseries |>
+    filter(metric == "b_lrp", !is.na(value)) |>
+    group_by(stock_id) |>
+    summarise(b_first = min(year), b_last = max(year), .groups = "drop")
+
   u_last <- timeseries |>
     filter(metric == "u_umsy") |>
     group_by(stock_id) |>
@@ -69,6 +75,7 @@ make_card_data <- function(stocks, timeseries) {
   
   stocks |>
     left_join(latest_b, by = "stock_id") |>
+    left_join(b_span, by = "stock_id") |>
     left_join(u_last, by = "stock_id") |>
     left_join(stock_extras, by = "stock_id") |>
     mutate(
@@ -144,7 +151,8 @@ make_card <- function(s, link = NULL, spark_dir = here::here("figures", "sparkli
         tags$dt("Evidence"),         tags$dd(s$data_tier_label),
         tags$dt("Managed by"),       tags$dd(s$manager),
         tags$dt("Status method"),    tags$dd(coalesce(s$status_method, "Not reported")),
-        tags$dt("RAM assessment period"), tags$dd(coalesce(s$ram_assess_years, "Not in RAM Legacy"))
+        tags$dt("RAM assessment period"), tags$dd(coalesce(s$ram_assess_years, "Not in RAM Legacy")),
+        tags$dt("Biomass estimates"), tags$dd(if (is.null(s$b_first) || is.na(s$b_first)) "None compiled" else glue("{s$b_first} to {s$b_last}"))
         ),
       if (show_gaps) div(class = "gaps", strong("Data gaps and caveats"),
                          tags$ul(lapply(make_gaps(s), tags$li))),

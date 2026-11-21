@@ -65,12 +65,14 @@ Requires R (4.3 or later), Quarto (1.4 or later), and the packages installed by 
 1. `R/00_setup.R`: folders and packages
 2. `R/01_download.R`: download raw data
 3. `R/04_build_database.R`: build the tidy tables and data dictionary
-4. `R/06_harmonise_lrp.R`: add the biomass-to-limit indicator and cross-checks
-5. `R/07_make_figures.R`: figures
-6. `R/08_map_cards.R`: standalone map and card preview
-7. `R/09_render_reports.R`: one PDF per stock in `reports/output/`
-8. `R/10_make_site_files.R` and `R/11_make_banner.R`: stock pages, card styles, and banner
-9. `quarto render`: builds the website into `docs/`
+4. `R/05_herring_stripes.R`: herring biomass stripes for the Explore page (static and interactive)
+5. `R/06_harmonise_lrp.R`: add the biomass-to-limit indicator and cross-checks
+6. `R/07_make_figures.R`: figures
+7. `R/08_map_cards.R`: standalone map and card preview
+8. `R/09_render_reports.R`: one PDF per stock in `reports/output/`
+9. `R/10_make_site_files.R`: stock pages and card styles
+10. `R/11_make_banner.R`: the stripe banner on the home page
+11. `quarto render`: builds the website into `docs/`
 
 Scripts `02_inspect.R` and `03_explore_stocks.R` are exploratory checks and are not needed to rebuild the outputs.
 
