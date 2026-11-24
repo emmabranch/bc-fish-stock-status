@@ -9,10 +9,10 @@ format:
     cr-section:
       layout: "sidebar-left"
     cr-style:
-      section-background-color: "#f6f4ef"
-      narrative-background-color-sidebar: "#f6f4ef"
-      narrative-text-color-sidebar: "#1f2a33"
-      narrative-background-color-overlay: "rgba(11, 34, 51, 0.92)"
+      section-background-color: "#F3EEE3"
+      narrative-background-color-sidebar: "#F3EEE3"
+      narrative-text-color-sidebar: "#111111"
+      narrative-background-color-overlay: "rgba(17, 17, 17, 0.92)"
       narrative-text-color-overlay: "#ffffff"
 ---
 

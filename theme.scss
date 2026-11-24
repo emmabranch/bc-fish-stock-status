@@ -1,6 +1,7 @@
 /*-- scss:defaults --*/
-/* Fonts, navbar, headings, links, footer, hero, and stat boxes come from the shared brand kit
-   (_brand.yml and brand.scss). This file keeps only what is special to this site. */
+/* Fonts, navbar, headings, links, footer, hero, stat boxes, buttons, and map
+   outlines come from the shared brand kit (_brand.yml and brand.scss).
+   This file keeps only what is special to this site. */
 
 /*-- scss:rules --*/
 
@@ -9,115 +10,85 @@
   --eb-accent: #0f7f66;
   --eb-accent-2: #3fbf9a;
   --eb-accent-light: #7fe0c4;
-  --eb-hero-glow: rgba(63, 191, 154, 0.28);
-  --eb-hero-shade: 8, 26, 40;
+  --eb-hero-glow: rgba(63, 191, 154, 0.22);
+  --eb-hero-shade: 10, 22, 20;
 }
 
-/* ---------- Type and headings ---------- */
-h1, h2, h3 { letter-spacing: -0.01em; }
-h1.title { font-weight: 800; }
-h2 { margin-top: 2.4rem; }
+/* ---------- Hero: deep sea green behind the stripes ---------- */
+.hero-full { background-color: #0b1f1a; }
 
-/* ---------- Hero ---------- */
-.hero {
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 85% 15%, rgba(22, 160, 133, 0.35) 0%, rgba(22, 160, 133, 0) 45%),
-    linear-gradient(135deg, #0b2233 0%, #1f4e79 55%, #2471a3 100%);
-  color: #fff;
-  padding: 2.3rem 2.3rem 1.6rem;
-  border-radius: 18px;
-  margin: 0.5rem 0 1.4rem;
-  box-shadow: 0 10px 30px rgba(11, 34, 51, 0.25);
-}
-.hero h1 { color: #fff; font-weight: 800; font-size: 2.6rem; margin: 0.2rem 0 0.6rem; border: none; }
-.hero h1::after { display: none; }
-.hero p { opacity: 0.93; max-width: 54rem; margin: 0; font-size: 1.08rem; }
-.hero .eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.78rem;
-  font-weight: 600;
-  opacity: 0.8;
-}
-.hero img.banner-stripes {
-  display: block;
-  width: 100%;
-  height: 30px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-top: 1.4rem;
-  box-shadow: none;
-}
-.hero .banner-note { font-size: 0.78rem; opacity: 0.75; margin-top: 0.4rem; }
-
-/* ---------- Stat boxes ---------- */
-.stat-box:nth-child(1) { border-top-color: #2471a3; }
-.stat-box:nth-child(2) { border-top-color: #16a085; }
-.stat-box:nth-child(3) { border-top-color: #8e44ad; }
-.stat-box:nth-child(4) { border-top-color: #1a7f4b; }
-.stat-box:nth-child(5) { border-top-color: #c0392b; }
-/* ---------- Cards ---------- */
-.stock-card { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important; }
-.stock-card .card-title { font-family: "Fraunces", Georgia, serif; font-weight: 700; }
-.card-grid { gap: 22px; }
-.card-grid .stock-card { transition: transform 0.15s ease, box-shadow 0.15s ease; }
-.card-grid .stock-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(16, 42, 67, 0.18);
-}
-.column .stock-card { width: 100%; max-width: 380px; }
-
-/* ---------- Charts, map, tables ---------- */
-main img.img-fluid:not(.banner-stripes) {
-  background: #fff;
-  border-radius: 14px;
-  padding: 10px;
-  box-shadow: 0 1px 3px rgba(16, 42, 67, 0.08), 0 8px 22px rgba(16, 42, 67, 0.07);
-}
-.leaflet-container {
-  border-radius: 14px;
-  box-shadow: 0 1px 3px rgba(16, 42, 67, 0.08), 0 10px 26px rgba(16, 42, 67, 0.10);
-}
-.plotly.html-widget {
-  background: #fff;
-  border-radius: 14px;
-  padding: 8px;
-  box-shadow: 0 1px 3px rgba(16, 42, 67, 0.08), 0 8px 22px rgba(16, 42, 67, 0.07);
-}
-.table {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  font-size: 0.95rem;
-  box-shadow: 0 1px 3px rgba(16, 42, 67, 0.06);
-}
-.table thead th { background: #eef3f7; border-bottom: none; }
-
-/* ---------- Buttons and notes ---------- */
-.btn { border-radius: 999px; font-weight: 600; padding: 0.55rem 1.25rem; }
-.disclaimer {
-  font-size: 0.9rem;
-  color: #5b4a1e;
-  background: #fff8e6;
-  border-left: 4px solid #d98c00;
-  border-radius: 8px;
-  padding: 0.6rem 0.9rem;
-  margin: 1rem 0 1.4rem;
-}
-
+/* ---------- Stat boxes: five kelp shades, tomato for "below the limit" ---------- */
+.stat-box:nth-child(1) { border-top-color: #0f7f66; }
+.stat-box:nth-child(2) { border-top-color: #3fbf9a; }
+.stat-box:nth-child(3) { border-top-color: #0b5c4a; }
+.stat-box:nth-child(4) { border-top-color: #7fe0c4; }
+.stat-box:nth-child(5) { border-top-color: #FF5A36; }
 .stat-row.lift { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 @media (max-width: 900px) {
   .stat-row.lift { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
+/* ---------- Stock cards: ink outline and hard shadow ---------- */
+.stock-card { font-family: "Bricolage Grotesque", sans-serif !important; }
+.stock-card .card-title { font-weight: 800; letter-spacing: -0.01em; }
+.card-grid { gap: 24px; }
+.card-grid .stock-card { transition: transform 0.12s ease, box-shadow 0.12s ease; }
+.card-grid .stock-card:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0 #111111;
+}
+.column .stock-card { width: 100%; max-width: 380px; }
+
+/* ---------- Charts and tables: white panels with an ink outline ---------- */
+main img.img-fluid {
+  background: #ffffff;
+  border: 2px solid #111111;
+  padding: 10px;
+  box-shadow: 4px 4px 0 #111111;
+}
+/* Plotly charts set their own fixed size, so the panel goes on the box around
+   the chart instead, which grows to fit it */
+.cell-output-display:has(> .plotly.html-widget) {
+  background: #ffffff;
+  border: 2px solid #111111;
+  box-shadow: 4px 4px 0 #111111;
+  padding: 8px;
+  margin: 0.5rem 0 1.5rem;
+  overflow: visible;
+}
+/* Let each chart be as tall as it draws itself (one was cut off at the bottom) */
+.cell-output-display:has(> .plotly.html-widget) > .plotly.html-widget { height: auto !important; }
+.table { background: #ffffff; border: 2px solid #111111; font-size: 0.95rem; }
+.table thead th { background: #F3EEE3; }
+
+/* ---------- Notes ---------- */
+.disclaimer {
+  font-size: 0.92rem;
+  color: #111111;
+  background: #ffffff;
+  border: 2px solid #111111;
+  border-left: 8px solid #FFD23F;
+  padding: 0.7rem 1rem;
+  margin: 1rem 0 1.5rem;
+}
+
+/* ---------- Scrolling story: room for the chart outlines and shadows ---------- */
+.cr-section { --cr-narrative-border-radius: 0; }
+.cr-section .narrative-col .narrative { border-radius: 0 !important; }
+.cr-section .sticky-col .sticky-col-stack { padding: 0 1.5rem 0 0.5rem; }
+
 /* ---------- Scrolling story on phones ----------
    Closeread stacks the chart behind the text on narrow screens. Pin the chart
    to the top of the screen so the text boxes pass underneath it, rather than
    over the middle of it. */
+.cr-section .narrative-col .narrative { border: 2px solid #111111; }
 @media (max-width: 575.98px) {
-  .cr-section .sticky-col .sticky-col-stack { padding-top: 0.75rem; align-items: start; }
+  .cr-section .sticky-col .sticky-col-stack { padding: 1rem 1rem 0 0.75rem; align-items: start; }
   .cr-section .sticky-col .sticky-col-stack .sticky { margin: 0 auto auto !important; }
-  .cr-section .narrative-col .narrative { box-shadow: 0 6px 20px rgba(11, 34, 51, 0.25); }
+  .cr-section .narrative-col .narrative { box-shadow: 4px 4px 0 #111111; }
+}
+
+/* Anyone who turns motion off gets none */
+@media (prefers-reduced-motion: reduce) {
+  .card-grid .stock-card:hover { transform: none; }
 }
