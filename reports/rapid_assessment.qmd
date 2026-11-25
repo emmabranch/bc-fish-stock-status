@@ -10,11 +10,16 @@ format:
     fontsize: 10pt
     fig-format: png
     fig-dpi: 300
+    mainfont: "Bricolage Grotesque"
+    font-paths: ["../fonts"]
   html:
     embed-resources: true
     toc: false
 params:
   stock_id: "herring_hg"
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
 execute:
   echo: false
   warning: false
