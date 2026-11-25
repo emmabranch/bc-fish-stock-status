@@ -12,19 +12,51 @@ suppressPackageStartupMessages({
 })
 
 # ---- Shared look ----
+# Chart style from the brand kit (fonts, paper background, ink axes)
+source(here::here("R", "theme_eb.R"))
+eb_use("bc-fish-stock-status")
+
+# DFO status zones keep the green / amber / red convention, but at clearly
+# different lightness (light green, pale amber, dark red) so they separate for
+# colourblind readers too. "Not in survey" is paper: no status, not a colour.
 zone_cols <- c(
-  Healthy = "#1a7f4b", Cautious = "#d98c00", Critical = "#c0392b",
-  Uncertain = "#7f8c8d", "Not in survey" = "#8e959c"
+  Healthy = "#00B386", Cautious = "#FFD23F", Critical = "#A3241A",
+  Uncertain = "#C9C1B3", "Not in survey" = "#F3EEE3"
+)
+# Text on each zone colour (badges), and zone colours dark enough for text on paper
+zone_text_on <- c(Healthy = "#111111", Cautious = "#111111", Critical = "#FFFFFF",
+                  Uncertain = "#111111", "Not in survey" = "#111111")
+zone_text_cols <- c(Healthy = "#00664B", Cautious = "#8F6A00", Critical = "#A3241A",
+                    Uncertain = "#5A544A", "Not in survey" = "#5A544A")
+
+# Species: the kit's six bright inks for card headers (ink text on all but
+# cobalt), and a deeper version of each for lines and points on paper
+# Assigned so no card's header matches a status badge it could carry
+species_cols <- c(
+  "Sablefish"       = "#B9A4FF",   # lilac
+  "Pacific halibut" = "#FF5A36",   # tomato
+  "Pacific cod"     = "#00B386",   # kelp (no status zone, so no clash with Healthy)
+  "Pacific herring" = "#2340FF",   # cobalt (five herring stocks across all zones)
+  "Spot prawn"      = "#FF6FB0",   # hot pink
+  "Dungeness crab"  = "#FFD23F"    # sunflower (Healthy, so no clash with Cautious)
+)
+species_text_on <- c(
+  "Sablefish" = "#111111", "Pacific halibut" = "#111111", "Pacific cod" = "#111111",
+  "Pacific herring" = "#FFFFFF", "Spot prawn" = "#111111", "Dungeness crab" = "#111111"
+)
+species_line <- c(
+  "Sablefish"       = "#6E4FD6",
+  "Pacific halibut" = "#E0431B",
+  "Pacific cod"     = "#00664B",
+  "Pacific herring" = "#2340FF",
+  "Spot prawn"      = "#C42E78",
+  "Dungeness crab"  = "#8F6A00"
 )
 
-species_cols <- c(
-  "Sablefish"       = "#2c3e50",
-  "Pacific halibut" = "#16a085",
-  "Pacific cod"     = "#8e44ad",
-  "Pacific herring" = "#2471a3",
-  "Spot prawn"      = "#e67e22",
-  "Dungeness crab"  = "#b03a2e"
-)
+# Soft fills for "below the limit" bands and the Kobe quadrants
+below_fill   <- "#F6CFC4"   # tomato tint
+caution_fill <- "#FCEDB8"   # sunflower tint
+ok_fill      <- "#CDEDE1"   # kelp tint
 
 stock_short <- c(
   sablefish    = "Sablefish",
@@ -46,20 +78,12 @@ caption_std <- paste(
 )
 
 theme_bcstock <- function(base_size = 12) {
-  theme_minimal(base_size = base_size) +
-    theme(
-      plot.title            = element_text(face = "bold", size = base_size * 1.35),
-      plot.subtitle         = element_text(colour = "grey30"),
-      plot.caption          = element_text(colour = "grey45", hjust = 0, size = base_size * 0.7),
-      plot.title.position   = "plot",
-      plot.caption.position = "plot",
-      panel.grid.minor      = element_blank()
-    )
+  theme_eb(base_size = base_size)
 }
 
 fill_lrp <- function(name = "Biomass relative to the limit reference point") {
-  scale_fill_gradient2(
-    low = "#b2182b", mid = "#f7f7f7", high = "#2166ac", midpoint = 0,
+  scale_fill_eb_div(   # red below the limit, blue above, paper at the limit
+    midpoint = 0,
     limits = c(-2, 2), oob = squish, breaks = -2:2,
     labels = c("\u00bc\u00d7", "\u00bd\u00d7", "LRP", "2\u00d7", "4\u00d7"),
     name = name
@@ -94,9 +118,9 @@ plot_stripes <- function(timeseries, stocks, stock_ids = NULL,
     geom_tile(height = 0.9, width = 1) +
     geom_label(
       data = badges, aes(x = x_end + 2, y = label, label = badge, colour = zone),
-      inherit.aes = FALSE, hjust = 0, size = 3.1, fontface = "bold", fill = "white"
+      inherit.aes = FALSE, hjust = 0, size = 3.1, fontface = "bold", fill = eb_col$white
     ) +
-    scale_colour_manual(values = zone_cols, guide = "none") +
+    scale_colour_manual(values = zone_text_cols, guide = "none") +
     fill_lrp() +
     scale_x_continuous(breaks = seq(1950, 2020, 10),
                        limits = c(min(d$year) - 0.5, x_end + 19), expand = c(0, 0)) +
@@ -113,6 +137,7 @@ plot_stripes <- function(timeseries, stocks, stock_ids = NULL,
     theme(
       panel.grid = element_blank(),
       axis.text.y = element_text(face = "bold"),
+      axis.line.x = element_blank(),
       legend.position = "bottom",
       legend.title.position = "top",
       legend.key.width = unit(2.5, "cm")
@@ -138,24 +163,24 @@ plot_kobe <- function(timeseries, stocks) {
   ends <- kd |> group_by(stock_id) |> filter(year %in% range(year)) |> ungroup()
   
   ggplot(kd, aes(b_bmsy, u_umsy)) +
-    annotate("rect", xmin = 0, xmax = 1,    ymin = 1, ymax = ymax, fill = "#f4c7c3") +
-    annotate("rect", xmin = 1, xmax = xmax, ymin = 1, ymax = ymax, fill = "#fbe3b8") +
-    annotate("rect", xmin = 0, xmax = 1,    ymin = 0, ymax = 1,    fill = "#fbe3b8") +
-    annotate("rect", xmin = 1, xmax = xmax, ymin = 0, ymax = 1,    fill = "#cfe8d5") +
+    annotate("rect", xmin = 0, xmax = 1,    ymin = 1, ymax = ymax, fill = below_fill) +
+    annotate("rect", xmin = 1, xmax = xmax, ymin = 1, ymax = ymax, fill = caution_fill) +
+    annotate("rect", xmin = 0, xmax = 1,    ymin = 0, ymax = 1,    fill = caution_fill) +
+    annotate("rect", xmin = 1, xmax = xmax, ymin = 0, ymax = 1,    fill = ok_fill) +
     annotate("text", x = 0.03, y = ymax * 0.97, label = "Low biomass,\nhigh fishing pressure",
-             hjust = 0, vjust = 1, size = 3, colour = "grey25", fontface = "italic") +
+             hjust = 0, vjust = 1, size = 3, colour = eb_col$ink, fontface = "italic") +
     annotate("text", x = xmax * 0.98, y = 0.04, label = "High biomass,\nlow fishing pressure",
-             hjust = 1, vjust = 0, size = 3, colour = "grey25", fontface = "italic") +
-    geom_vline(xintercept = c(0.4, 0.8), linetype = "dashed", colour = "grey35", linewidth = 0.4) +
+             hjust = 1, vjust = 0, size = 3, colour = eb_col$ink, fontface = "italic") +
+    geom_vline(xintercept = c(0.4, 0.8), linetype = "dashed", colour = eb_col$muted, linewidth = 0.4) +
     annotate("text", x = c(0.4, 0.8), y = ymax * 0.02,
              label = c("0.4 Bmsy\nLRP proxy", "0.8 Bmsy\nUSR proxy"),
-             hjust = -0.08, vjust = 0, size = 2.7, colour = "grey30") +
+             hjust = -0.08, vjust = 0, size = 2.7, colour = eb_col$muted) +
     geom_path(aes(colour = species), linewidth = 0.8,
               arrow = arrow(length = unit(0.25, "cm"), type = "closed")) +
     geom_point(aes(colour = species), size = 1.1) +
     geom_label_repel(data = ends, aes(label = year, colour = species),
                      size = 3, show.legend = FALSE, min.segment.length = 0, seed = 1) +
-    scale_colour_manual(values = species_cols, name = NULL) +
+    scale_colour_manual(values = species_line, name = NULL) +
     coord_cartesian(xlim = c(0, xmax), ylim = c(0, ymax), expand = FALSE) +
     labs(
       title = "Kobe plot: where each stock has been",
@@ -169,7 +194,7 @@ plot_kobe <- function(timeseries, stocks) {
       )
     ) +
     theme_bcstock() +
-    theme(legend.position = "top")
+    theme(legend.position = "top", axis.line.x = element_blank())
 }
 
 # ---- 4. Animated, interactive Kobe plot ----
@@ -204,14 +229,14 @@ plot_kobe_animated <- function(timeseries, stocks) {
   
   plot_ly(
     acc, x = ~b_bmsy, y = ~u_umsy, color = ~species,
-    colors = unname(species_cols[sp_levels]),
+    colors = unname(species_line[sp_levels]),
     frame = ~frame, text = ~hover, hoverinfo = "text",
     type = "scatter", mode = "lines+markers", marker = list(size = 6)
   ) |>
     layout(
       shapes = list(
-        rect(0, 1, 1, ymax, "#f4c7c3"), rect(1, xmax, 1, ymax, "#fbe3b8"),
-        rect(0, 1, 0, 1, "#fbe3b8"),    rect(1, xmax, 0, 1, "#cfe8d5")
+        rect(0, 1, 1, ymax, below_fill), rect(1, xmax, 1, ymax, caution_fill),
+        rect(0, 1, 0, 1, caution_fill),  rect(1, xmax, 0, 1, ok_fill)
       ),
       xaxis  = list(title = "Biomass relative to Bmsy", range = c(0, xmax), zeroline = FALSE),
       yaxis  = list(title = "Fishing pressure relative to Fmsy", range = c(0, ymax), zeroline = FALSE),
@@ -220,6 +245,7 @@ plot_kobe_animated <- function(timeseries, stocks) {
     animation_opts(frame = 120, transition = 0, redraw = FALSE) |>
     animation_slider(currentvalue = list(prefix = "Year: ")) |>
     animation_button(label = "Play") |>
+    eb_plotly(grid = "none") |>
     config(displayModeBar = FALSE)
 }
 
@@ -227,16 +253,16 @@ plot_kobe_animated <- function(timeseries, stocks) {
 plot_no_data <- function(s) {
   ggplot() +
     annotate("text", x = 0, y = 0.25, label = s$stock_name, fontface = "bold", size = 6) +
-    annotate("text", x = 0, y = -0.05, size = 4, colour = "grey30",
+    annotate("text", x = 0, y = -0.05, size = 4, colour = eb_col$muted,
              label = "No public stock assessment time series compiled in this project.") +
-    annotate("text", x = 0, y = -0.3, size = 4, colour = zone_cols[coalesce(s$dfo_status_zone, "Not in survey")],
+    annotate("text", x = 0, y = -0.3, size = 4, colour = zone_text_cols[coalesce(s$dfo_status_zone, "Not in survey")],
              fontface = "bold",
              label = glue("{zone_label(s$dfo_status_zone)} (status method: {coalesce(s$status_method, 'not reported')})")) +
     xlim(-1, 1) + ylim(-0.6, 0.6) +
     labs(caption = caption_std) +
-    theme_void() +
-    theme(plot.caption = element_text(colour = "grey45", hjust = 0, size = 8),
-          plot.background = element_rect(fill = "grey97", colour = NA),
+    theme_void(base_family = .eb$sans) +
+    theme(plot.caption = element_text(family = .eb$mono, colour = eb_col$muted, hjust = 0, size = 8),
+          plot.background = element_rect(fill = eb_col$paper, colour = NA),
           plot.margin = margin(15, 15, 15, 15))
 }
 
@@ -245,7 +271,7 @@ plot_trend <- function(timeseries, stocks, id) {
   s <- stocks |> filter(stock_id == id)
   if (s$data_tier == "D") return(plot_no_data(s))
   
-  col  <- species_cols[[s$species]]
+  col  <- species_line[[s$species]]
   b    <- timeseries |> filter(stock_id == id, metric == "b_lrp")
   catch_metric <- if (any(timeseries$stock_id == id & timeseries$metric == "total_catch")) "total_catch" else "landings"
   xr   <- range(b$year) + c(-0.5, 0.5)
@@ -256,14 +282,14 @@ plot_trend <- function(timeseries, stocks, id) {
   ymax <- max(5, max(b$value) * 1.15)
   
   p1 <- ggplot(b, aes(year, value)) +
-    annotate("rect", xmin = -Inf, xmax = Inf, ymin = ymin, ymax = 1, fill = "#f4c7c3", alpha = 0.6) +
+    annotate("rect", xmin = -Inf, xmax = Inf, ymin = ymin, ymax = 1, fill = below_fill) +
     annotate("text", x = xr[1], y = ymin * 1.15, label = "Below limit reference point",
-             hjust = 0, vjust = 0, size = 3, colour = "#922b21") +
-    geom_hline(yintercept = 1, colour = "#c0392b", linetype = "dashed") +
+             hjust = 0, vjust = 0, size = 3, colour = "#A3241A") +
+    geom_hline(yintercept = 1, colour = "#A3241A", linetype = "dashed") +
     geom_line(colour = col, linewidth = 0.9) +
     geom_point(data = last, colour = col, size = 2.6) +
     geom_label(data = last, aes(label = glue("{year}: {number(value, accuracy = 0.01)}\u00d7 LRP")),
-               hjust = 1.08, vjust = -0.3, size = 3.2, colour = col) +
+               hjust = 1.08, vjust = -0.3, size = 3.2, colour = col, fill = eb_col$paper) +
     scale_y_log10(limits = c(ymin, ymax), breaks = c(0.25, 0.5, 1, 2, 4, 8),
                   labels = c("\u00bc\u00d7", "\u00bd\u00d7", "LRP", "2\u00d7", "4\u00d7", "8\u00d7")) +
     scale_x_continuous(limits = xr) +
@@ -278,7 +304,7 @@ plot_trend <- function(timeseries, stocks, id) {
   }
   
   p2 <- ggplot(cdat, aes(year, value)) +
-    geom_col(fill = col, alpha = 0.55, width = 0.85) +
+    geom_col(fill = species_cols[[s$species]], colour = eb_col$ink, linewidth = 0.2, width = 0.85) +
     scale_y_continuous(labels = label_comma()) +
     scale_x_continuous(limits = xr) +
     labs(subtitle = if (catch_metric == "total_catch") "Total catch (tonnes)" else "Landings (tonnes)",
@@ -286,7 +312,7 @@ plot_trend <- function(timeseries, stocks, id) {
   
   (p1 / p2) +
     plot_layout(heights = c(2.2, 1)) +
-    plot_annotation(caption = caption_std) &
+    plot_annotation(caption = caption_std, theme = theme_bcstock()) &
     theme_bcstock()
 }
 
@@ -296,9 +322,9 @@ plot_sparkline <- function(timeseries, stocks, id) {
   b <- timeseries |> filter(stock_id == id, metric == "b_lrp")
   if (nrow(b) == 0) return(NULL)
   ggplot(b, aes(year, value)) +
-    geom_hline(yintercept = 1, colour = "#c0392b", linetype = "dashed", linewidth = 0.3) +
-    geom_line(colour = species_cols[[s$species]], linewidth = 0.7) +
-    geom_point(data = slice_max(b, year, n = 1), colour = species_cols[[s$species]], size = 1.4) +
+    geom_hline(yintercept = 1, colour = "#A3241A", linetype = "dashed", linewidth = 0.3) +
+    geom_line(colour = species_line[[s$species]], linewidth = 0.7) +
+    geom_point(data = slice_max(b, year, n = 1), colour = species_line[[s$species]], size = 1.4) +
     scale_y_log10() +
     theme_void()
 }

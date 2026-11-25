@@ -14,11 +14,11 @@ dir.create(here("figures", "sparklines"), showWarnings = FALSE, recursive = TRUE
 # ---- 1. Coast-wide stripes ----
 p_stripes <- plot_stripes(timeseries, stocks)
 ggsave(here("figures", "coastwide_stripes.png"), p_stripes,
-       width = 12, height = 6.5, dpi = 300, bg = "white")
+       width = 12, height = 6.5, dpi = 300, device = ragg::agg_png)
 
 # ---- 2. Kobe plot, static ----
 p_kobe <- plot_kobe(timeseries, stocks)
-ggsave(here("figures", "kobe.png"), p_kobe, width = 9, height = 7.5, dpi = 300, bg = "white")
+ggsave(here("figures", "kobe.png"), p_kobe, width = 9, height = 7.5, dpi = 300, device = ragg::agg_png)
 
 # ---- 3. Kobe plot, animated ----
 k_anim <- plot_kobe_animated(timeseries, stocks)
@@ -28,7 +28,7 @@ htmlwidgets::saveWidget(k_anim, here("figures", "kobe_animated.html"), selfconta
 for (id in stocks$stock_id) {
   p <- plot_trend(timeseries, stocks, id)
   ggsave(here("figures", "stocks", paste0(id, "_trend.png")), p,
-         width = 9, height = 6, dpi = 200, bg = "white")
+         width = 9, height = 6, dpi = 300, device = ragg::agg_png)
 }
 
 # ---- 5. Sparklines for cards ----
@@ -36,7 +36,7 @@ for (id in stocks$stock_id) {
   p <- plot_sparkline(timeseries, stocks, id)
   if (!is.null(p)) {
     ggsave(here("figures", "sparklines", paste0(id, ".png")), p,
-           width = 2.4, height = 0.8, dpi = 200, bg = "transparent")
+           width = 2.4, height = 0.8, dpi = 300, bg = "transparent", device = ragg::agg_png)
   }
 }
 

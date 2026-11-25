@@ -1,5 +1,5 @@
 
-.stock-card{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+.stock-card{font-family:'Bricolage Grotesque',system-ui,sans-serif;
   width:290px;border-radius:0;overflow:hidden;border:2px solid #111;box-shadow:5px 5px 0 #111;
   background:#fff;color:#111;}
 .card-grid .stock-card{width:auto;}
@@ -7,23 +7,23 @@
 .leaflet-popup-content{margin:0 !important;}
 .leaflet-popup-scrolled{border:none !important;scrollbar-width:thin;}
 .leaflet-popup-content-wrapper{padding:0 !important;border-radius:0 !important;border:2px solid #111;box-shadow:4px 4px 0 #111 !important;overflow:hidden;}
-.stock-card .card-head{padding:10px 14px;color:#fff;}
+.stock-card .card-head{padding:10px 14px;border-bottom:2px solid #111;}
 .stock-card .card-species{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;}
 .stock-card .card-title{font-size:16px;font-weight:700;line-height:1.2;margin-top:2px;}
 .stock-card .card-body{padding:10px 14px 12px;font-size:12.5px;line-height:1.4;}
 .stock-card .badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
-.stock-card .badge{display:inline-block;padding:2px 8px;border-radius:0;border:1.5px solid #111;font-size:11px;font-weight:700;color:#fff;}
+.stock-card .badge{display:inline-block;padding:2px 8px;border-radius:0;border:1.5px solid #111;font-size:11px;font-weight:700;}
 .stock-card .badge.tier{background:#F3EEE3;color:#111;}
 .stock-card .stat{font-size:24px;font-weight:800;line-height:1.1;}
-.stock-card .stat-label{font-size:11px;color:#666;}
+.stock-card .stat-label{font-size:11px;color:#5A544A;}
 .stock-card .spark{width:100%;height:auto;margin:4px 0 6px;}
 .stock-card dl{margin:8px 0 6px;display:grid;grid-template-columns:auto 1fr;gap:3px 10px;}
-.stock-card dt{color:#777;font-size:11px;}
+.stock-card dt{font-family:'Space Mono',monospace;color:#5A544A;font-size:10.5px;}
 .stock-card dd{margin:0;font-size:11.5px;}
 .stock-card .gaps{background:#FFF4CC;border-left:4px solid #FFD23F;padding:6px 8px;margin-top:6px;font-size:11.5px;}
 .stock-card .gaps ul{margin:3px 0 0 16px;padding:0;}
-.stock-card .fun{margin-top:8px;font-size:11.5px;color:#555;font-style:italic;}
-.stock-card .note{margin-top:6px;font-size:10.5px;color:#888;}
-.stock-card a.more{display:inline-block;margin-top:8px;font-weight:700;font-size:12px;}
+.stock-card .fun{margin-top:8px;font-size:11.5px;color:#5A544A;font-style:italic;}
+.stock-card .note{margin-top:6px;font-size:10.5px;color:#5A544A;}
+.stock-card a.more{display:inline-block;margin-top:8px;font-weight:700;font-size:12px;color:#2340FF;}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px;}
 

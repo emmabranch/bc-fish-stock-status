@@ -23,33 +23,34 @@ stock_extras <- tribble(
 )
 
 # ---- Card CSS (shared by the map and the website) ----
+# The site's cards.css is written from this by R/10_make_site_files.R, so edit here
 card_css <- "
-.stock-card{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-  width:290px;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.15);
-  background:#fff;color:#222;}
+.stock-card{font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  width:290px;border-radius:0;overflow:hidden;border:2px solid #111;box-shadow:5px 5px 0 #111;
+  background:#fff;color:#111;}
 .card-grid .stock-card{width:auto;}
-.leaflet-popup-content .stock-card{box-shadow:none;width:290px;}
+.leaflet-popup-content .stock-card{box-shadow:none;border:none;width:290px;}
 .leaflet-popup-content{margin:0 !important;}
 .leaflet-popup-scrolled{border:none !important;scrollbar-width:thin;}
-.leaflet-popup-content-wrapper{padding:0 !important;border-radius:12px !important;overflow:hidden;}
-.stock-card .card-head{padding:10px 14px;color:#fff;}
-.stock-card .card-species{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;}
+.leaflet-popup-content-wrapper{padding:0 !important;border-radius:0 !important;border:2px solid #111;box-shadow:4px 4px 0 #111 !important;overflow:hidden;}
+.stock-card .card-head{padding:10px 14px;border-bottom:2px solid #111;}
+.stock-card .card-species{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;}
 .stock-card .card-title{font-size:16px;font-weight:700;line-height:1.2;margin-top:2px;}
 .stock-card .card-body{padding:10px 14px 12px;font-size:12.5px;line-height:1.4;}
 .stock-card .badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
-.stock-card .badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;color:#fff;}
-.stock-card .badge.tier{background:#eef1f4;color:#34495e;}
+.stock-card .badge{display:inline-block;padding:2px 8px;border-radius:0;border:1.5px solid #111;font-size:11px;font-weight:700;}
+.stock-card .badge.tier{background:#F3EEE3;color:#111;}
 .stock-card .stat{font-size:24px;font-weight:800;line-height:1.1;}
-.stock-card .stat-label{font-size:11px;color:#666;}
+.stock-card .stat-label{font-size:11px;color:#5A544A;}
 .stock-card .spark{width:100%;height:auto;margin:4px 0 6px;}
 .stock-card dl{margin:8px 0 6px;display:grid;grid-template-columns:auto 1fr;gap:3px 10px;}
-.stock-card dt{color:#777;font-size:11px;}
+.stock-card dt{font-family:'Space Mono',monospace;color:#5A544A;font-size:10.5px;}
 .stock-card dd{margin:0;font-size:11.5px;}
-.stock-card .gaps{background:#fff8e6;border-left:3px solid #d98c00;padding:6px 8px;margin-top:6px;font-size:11.5px;}
+.stock-card .gaps{background:#FFF4CC;border-left:4px solid #FFD23F;padding:6px 8px;margin-top:6px;font-size:11.5px;}
 .stock-card .gaps ul{margin:3px 0 0 16px;padding:0;}
-.stock-card .fun{margin-top:8px;font-size:11.5px;color:#555;font-style:italic;}
-.stock-card .note{margin-top:6px;font-size:10.5px;color:#888;}
-.stock-card a.more{display:inline-block;margin-top:8px;font-weight:700;font-size:12px;}
+.stock-card .fun{margin-top:8px;font-size:11.5px;color:#5A544A;font-style:italic;}
+.stock-card .note{margin-top:6px;font-size:10.5px;color:#5A544A;}
+.stock-card a.more{display:inline-block;margin-top:8px;font-weight:700;font-size:12px;color:#2340FF;}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px;}
 "
 
@@ -118,7 +119,9 @@ make_gaps <- function(s) {
 make_card <- function(s, link = NULL, spark_dir = here::here("figures", "sparklines"), show_gaps = TRUE) {
   zone <- coalesce(s$dfo_status_zone, "Not in survey")
   zcol <- zone_cols[[zone]]
+  ztxt <- zone_text_on[[zone]]
   scol <- species_cols[[s$species]]
+  stxt <- species_text_on[[s$species]]
   spark_path <- file.path(spark_dir, paste0(s$stock_id, ".png"))
   
   stat <- if (!is.na(s$latest_b_lrp)) {
@@ -137,13 +140,13 @@ make_card <- function(s, link = NULL, spark_dir = here::here("figures", "sparkli
   
   div(
     class = "stock-card",
-    div(class = "card-head", style = glue("background:{scol};"),
+    div(class = "card-head", style = glue("background:{scol};color:{stxt};"),
         div(class = "card-species", s$species),
         div(class = "card-title", s$stock_name)),
     div(
       class = "card-body",
       div(class = "badges",
-          span(class = "badge", style = glue("background:{zcol};"), zone_label(s$dfo_status_zone)),
+          span(class = "badge", style = glue("background:{zcol};color:{ztxt};"), zone_label(s$dfo_status_zone)),
           span(class = "badge tier", glue("Data tier {s$data_tier}"))),
       stat,
       spark,
@@ -180,19 +183,19 @@ make_stock_map <- function(cards, link_prefix = NULL, height = "620px") {
   })
   
   title_html <- paste0(
-    "<div style='background:white;padding:8px 12px;border-radius:8px;",
-    "box-shadow:0 1px 5px rgba(0,0,0,.2);font-family:sans-serif;max-width:250px;'>",
+    "<div style='background:white;padding:8px 12px;border:2px solid #111;",
+    "box-shadow:3px 3px 0 #111;font-family:\"Bricolage Grotesque\",sans-serif;max-width:250px;'>",
     "<div style='font-weight:800;font-size:14px;'>Click a pin to open its card</div>",
-    "<div style='font-size:11.5px;color:#555;margin-top:2px;'>Pins mark general areas, not stock boundaries.</div></div>"
+    "<div style='font-size:11.5px;color:#5A544A;margin-top:2px;'>Pins mark general areas, not stock boundaries.</div></div>"
   )
   
   leaflet(cards, height = height, width = "100%", options = leafletOptions(minZoom = 4)) |>
     addProviderTiles(providers$Esri.OceanBasemap, group = "Ocean") |>
-    addProviderTiles(providers$CartoDB.Positron,  group = "Light") |>
+    addProviderTiles(providers$Esri.WorldGrayCanvas, group = "Light") |>   # CARTO now needs an API key
     fitBounds(lng1 = -133.4, lat1 = 48.4, lng2 = -122.8, lat2 = 55.0) |>
     addCircleMarkers(
       lng = ~lng, lat = ~lat, radius = 11,
-      color = "white", weight = 2.5, fillColor = ~col, fillOpacity = 0.95,
+      color = "#111111", weight = 2, fillColor = ~col, fillOpacity = 0.95,
       label = ~label, popup = ~popup,
       popupOptions = popupOptions(maxWidth = 320, minWidth = 290, maxHeight = 440,
                                   keepInView = TRUE, autoPanPadding = c(40, 40))
@@ -201,7 +204,7 @@ make_stock_map <- function(cards, link_prefix = NULL, height = "620px") {
       position = "bottomright",
       colors = unname(zone_cols[c("Healthy", "Cautious", "Critical", "Not in survey")]),
       labels = c("Healthy", "Cautious", "Critical", "Not in DFO 2024 survey"),
-      title = "DFO 2024 status zone", opacity = 1
+      title = "DFO 2024 status zone", opacity = 0.95   # match the pins
     ) |>
     addLayersControl(baseGroups = c("Ocean", "Light"),
                      options = layersControlOptions(collapsed = TRUE)) |>

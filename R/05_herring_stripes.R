@@ -58,9 +58,12 @@ write_csv(
 )
 
 # ---- 3. Static infographic ----
-zone_cols <- c(Healthy = "#1a7f4b", Cautious = "#d98c00", Critical = "#c0392b", Uncertain = "grey50")
-fill_scale <- scale_fill_gradient2(
-  low = "#b2182b", mid = "#f7f7f7", high = "#2166ac", midpoint = 0,
+source(here("R", "theme_eb.R"))   # shared chart style from the brand kit
+eb_use("bc-fish-stock-status")
+# Zone colours dark enough for text on white (same as zone_text_cols in plot_functions.R)
+zone_cols <- c(Healthy = "#00664B", Cautious = "#8F6A00", Critical = "#A3241A", Uncertain = "#5A544A")
+fill_scale <- scale_fill_eb_div(   # red below the limit, blue above, paper at the limit
+  midpoint = 0,
   limits = c(-2, 2), oob = squish,
   breaks = c(-2, -1, 0, 1, 2),
   labels = c("\u00bc\u00d7", "\u00bd\u00d7", "LRP", "2\u00d7", "4\u00d7"),
@@ -74,7 +77,7 @@ p <- ggplot(stripes, aes(x = year, y = area, fill = log2(ratio_lrp))) +
   geom_label(
     data = badges,
     aes(x = 2020, y = area, label = paste0("DFO 2024: ", dfo_status_zone), colour = dfo_status_zone),
-    inherit.aes = FALSE, hjust = 0, size = 3.3, fontface = "bold", fill = "white"
+    inherit.aes = FALSE, hjust = 0, size = 3.3, fontface = "bold", fill = eb_col$white
   ) +
   scale_colour_manual(values = zone_cols, guide = "none") +
   fill_scale +
@@ -85,21 +88,18 @@ p <- ggplot(stripes, aes(x = year, y = area, fill = log2(ratio_lrp))) +
     x = NULL, y = NULL,
     caption  = "Data: RAM Legacy Stock Assessment Database v4.66 (DFO assessments to 2018); DFO Sustainability Survey for Fisheries 2024.\nUnfished biomass is from the 2018 assessment and is re-estimated by DFO each year. Exploratory personal project, not an official assessment."
   ) +
-  theme_minimal(base_size = 12) +
+  theme_eb(base_size = 12, grid = "none") +
   theme(
-    panel.grid       = element_blank(),
-    axis.text.y      = element_text(face = "bold", size = 11),
+    axis.line.x      = element_blank(),
+    axis.text.y      = element_text(face = "bold", size = 9),
     legend.position  = "bottom",
     legend.title.position = "top",
     legend.key.width = unit(2.5, "cm"),
-    plot.title       = element_text(face = "bold", size = 17),
-    plot.subtitle    = element_text(colour = "grey30"),
-    plot.caption     = element_text(colour = "grey45", hjust = 0, size = 8.5),
-    plot.title.position = "plot",
-    plot.caption.position = "plot"
+    plot.title       = element_text(size = 17)
   )
 
-ggsave(here("figures", "herring_stripes.png"), p, width = 12, height = 5.5, dpi = 300, bg = "white")
+ggsave(here("figures", "herring_stripes.png"), p, width = 12, height = 5.5, dpi = 300,
+       device = ragg::agg_png)
 print(p)
 
 # ---- 4. Interactive version (hover for values) ----
@@ -107,10 +107,11 @@ p_int <- ggplot(stripes, aes(x = year, y = area, fill = log2(ratio_lrp), text = 
   geom_tile(height = 0.92, width = 1) +
   fill_scale +
   labs(x = NULL, y = NULL) +
-  theme_minimal() +
-  theme(panel.grid = element_blank(), legend.position = "none")
+  theme_eb(grid = "none") +
+  theme(legend.position = "none", axis.line.x = element_blank())
 
 p_plotly <- ggplotly(p_int, tooltip = "text") |>
+  eb_plotly(grid = "none") |>
   config(displayModeBar = FALSE)
 htmlwidgets::saveWidget(p_plotly, here("figures", "herring_stripes.html"), selfcontained = TRUE)
 p_plotly
